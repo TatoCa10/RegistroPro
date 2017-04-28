@@ -47,7 +47,7 @@ public class Servlet_Menu extends HttpServlet {
         //Item item = new Item();
         //int opcion = Integer.parseInt(request.getParameter("opcion"));
         //switch (opcion) {
-            /*case 1:
+        /*case 1:
             //int idCrear = Integer.parseInt(request.getParameter("IdUserReg"));
             //String pass = request.getParameter("NPassUserReg");
             //String Nombre = request.getParameter("NombreUserReg");
@@ -90,11 +90,11 @@ public class Servlet_Menu extends HttpServlet {
             out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
             out.println("</body>");
             out.println("</html>");
-            */
-            // }
-            
-            // ;
-            /*case 2:
+         */
+        // }
+
+        // ;
+        /*case 2:
             int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
             String NombreLote = request.getParameter("NombreLoteReg");
             
@@ -127,7 +127,7 @@ public class Servlet_Menu extends HttpServlet {
             out.println("</html>");
             }
             ;*/
-            /*case 3:
+ /*case 3:
             String nombreProducto = request.getParameter("NombreProductoReg");
             String proveedorProducto = request.getParameter("ProveedorProductoReg");
             int IdProduc = Integer.parseInt(request.getParameter("IdProductoReg"));
@@ -173,7 +173,7 @@ public class Servlet_Menu extends HttpServlet {
             }
             
             ;*/
-            /*case 4:
+ /*case 4:
             Integer[] idsUser = new Integer[30];
             String[] NombresUsers = new String[30];
             rs = service.ListaGeneral(connection, 4);
@@ -683,7 +683,7 @@ public class Servlet_Menu extends HttpServlet {
             out.println("</html>");
             }
             ;*/
-        }
+    }
     //}
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -986,47 +986,6 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</html>");
                     }
                     ;
-                case 7: //Generador de Archivos
-                    ;
-                case 8:
-//                    int IdAListar = Integer.parseInt(request.getParameter("IdLoteListaPorId"));
-//                    ArrayList<Integer> LoteIdss = eaa.ListarLotesPorUsuarioLote(IdAListar);
-//
-//                    out.println("<!DOCTYPE html>");
-//                    out.println("<html>");
-//                    out.println("<head>");
-//                    out.println("<meta charset=\"utf-8\" />");
-//                    out.println("<title>Servlet_Menu</title>");
-//                    out.println("<link rel=\"stylesheet\" href=\"tablas.css\">");
-//                    out.println("<meta name=\"viewport\" content=\"initial-scale=1.0; maximum-scale=1.0; width=device-width;\">");
-//                    out.println("</head>");
-//                    out.println("<body>");
-//                    out.println("<div class=\"table-title\">");
-//                    out.println("<h3>Listado Lotes</h3>");
-//                    out.println("</div>");
-//                    out.println("<table class=\"table-fill\">");
-//                    out.println("<thead>");
-//                    out.println("<tr>");
-//                    out.println("<th class=\"text-left\">Id</th>");
-//                    out.println("<th class=\"text-left\">Posicion</th>");
-//                    out.println("</tr>");
-//                    out.println("</thead>");
-//                    out.println("<tbody class=\"table-hover\">");
-//                    for (int x = 0; x < LoteIdss.size(); x++) {
-//                        out.println("<tr>");
-//                        out.println("<td class=\"text-left\">" + IdAListar + "</td>");
-//                        out.println("<td class=\"text-left\">" + LoteIdss.get(x) + "</td>");
-//                        out.println("</tr>");
-//                    }
-//                    out.println("</tbody>");
-//                    out.println("</table>");
-//                    out.println("<center>");
-//                    out.println("<p>Regresar al menu principal <a href=" + "indexMainMenu.html" + "> Click Aquí</a></p>");
-//                    out.println("</center>");
-//                    out.println("</body>");
-//                    out.println("</html>");
-
-                    ;
                 case 9:
 
                     String NombreUsAct = request.getParameter("NombreUsuarioAct");
@@ -1045,8 +1004,6 @@ public class Servlet_Menu extends HttpServlet {
 
                     b = service.actUser(connection, user);
 
-                    if (b == true) {
-
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
@@ -1054,21 +1011,13 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
                         out.println("</head>");
                         out.println("<body>");
-                        out.println("<h1>Se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
+                        if (b == true) {
+                            out.println("<h1>Se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
+                        }else{
+                            out.println("<h1>No se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
+                        }
                         out.println("</body>");
                         out.println("</html>");
-                    } else {
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Actualizar Usuario</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "ActUser.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<p>No se logro actualizar el Usuario, Serás dirigido automáticamente en cinco segundos nuevamente al formulario de actualizacion. En caso contrario, puedes salir al menu principal, haciendo click <a href=" + "indexMainMenu.html" + ">Aquí</a></p>");
-                        out.println("</body>");
-                        out.println("</html>");
-                    }
 
                     ;
                 case 10:
