@@ -93,11 +93,10 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
                         out.println("</body>");
                         out.println("</html>");
-                     */
-                    // }
+                 */
+                // }
 
-                   // ;
-
+                // ;
                 case 2:
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
@@ -732,24 +731,40 @@ public class Servlet_Menu extends HttpServlet {
             switch (opcion) {
                 case 1:
                     int idCrear = Integer.parseInt(request.getParameter("IdUserReg"));
-                    //String pass = request.getParameter("NPassUserReg");
+                    String pass = request.getParameter("NPassUserReg");
                     String Nombre = request.getParameter("NombreUserReg");
-                    //String Apellido = request.getParameter("ApellidoUserReg");
-                    //String Correo = request.getParameter("CorreoUserReg");
-                    //String Telefono = request.getParameter("TelUserReg");
-                    out.println("<!DOCTYPE html>");
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title>Servlet Servlet_Menu</title>");
-                    //out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
-                    out.println("<h1>"+idCrear+"</h1>");
-                    out.println("<h1>"+Nombre+"</h1>");
-                    out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
-                    out.println("</body>");
-                    out.println("</html>");
+                    String Apellido = request.getParameter("ApellidoUserReg");
+                    String Correo = request.getParameter("CorreoUserReg");
+                    String Telefono = request.getParameter("TelUserReg");
+                    b = service.insertarUser(connection, idCrear, pass, Nombre, Apellido, Correo, Telefono);
+
+                    if (b == true) {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Servlet Servlet_Menu</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
+                        out.println("<h1>" + idCrear + "</h1>");
+                        out.println("<h1>" + Nombre + "</h1>");
+                        out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    } else {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Servlet Servlet_Menu</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>No fue posible agregar el Usuario, el Id ya existe, intente nuevamente...</h1>");
+                        out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    }
                     ;
             }
 
