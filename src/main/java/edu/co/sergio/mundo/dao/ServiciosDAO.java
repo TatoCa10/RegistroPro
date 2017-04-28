@@ -10,22 +10,22 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import edu.co.sergio.mundo.vo.User;
-import java.awt.Font;
+//import java.awt.Font;
 import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.Document;
-//import com.itextpdf.text.BaseColor;
+//import javax.swing.text.Document;
+import com.itextpdf.text.BaseColor;
 import java.util.logging.Logger;
-//import com.itextpdf.text.Document;
-//import com.itextpdf.text.Element;
-//import com.itextpdf.text.Paragraph;
-//import com.itextpdf.text.pdf.PdfPCell;
-//import com.itextpdf.text.Font;
-//import com.itextpdf.text.pdf.PdfPTable;
-//import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 
 /**
@@ -638,98 +638,98 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
 
     }
 
-//    public void GenerarPDF(Connection connection, Integer[] id, String[] nombre, int opc, String nombreArchivo) {
-//
-//        Integer []IdsPDF = new Integer[30];
-//        String []NombresPDF = new String[30];
-//        IdsPDF = id;
-//        NombresPDF = nombre;
-//
-//        Document document = new Document() ;
-//
-//        try {
-//
-//            PdfWriter.getInstance(document, new FileOutputStream(nombreArchivo+".pdf"));
-//            document.open();
-//            System.out.println("Probo");
-//            PdfPTable table = new PdfPTable(2);
-//            if(opc == 4){
-//            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuario.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Usuario", fuenteUsuario));
-//            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUser.setPaddingBottom(15);
-//            table.addCell(cellUser);
-//            
-//            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Usuario", fuenteUsuarioNombre));
-//            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUserNombre.setPaddingBottom(15);
-//            table.addCell(cellUserNombre);
-//            }
-//            if(opc == 5){
-//            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuario.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Lote", fuenteUsuario));
-//            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUser.setPaddingBottom(15);
-//            table.addCell(cellUser);
-//            
-//            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Lote", fuenteUsuarioNombre));
-//            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUserNombre.setPaddingBottom(15);
-//            table.addCell(cellUserNombre);
-//            }
-//            if(opc == 6){
-//            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuario.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUser = new PdfPCell(new Paragraph("Cantidad", fuenteUsuario));
-//            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUser.setPaddingBottom(15);
-//            table.addCell(cellUser);
-//            
-//            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-//            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-//            
-//            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Producto", fuenteUsuarioNombre));
-//            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-//            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-//            cellUserNombre.setPaddingBottom(15);
-//            table.addCell(cellUserNombre);
-//            }
-//            for (int x = 0; x < IdsPDF.length; x++) {
-//                String nombreCelda = IdsPDF[x].toString();
-//                
-//                PdfPCell cellUserNombreFor = new PdfPCell(new Paragraph(nombreCelda));
-//                cellUserNombreFor.setHorizontalAlignment(Element.ALIGN_CENTER);
-//                table.addCell(cellUserNombreFor);
-//                
-//                PdfPCell cellUserNombre2For = new PdfPCell(new Paragraph(NombresPDF[x]));
-//                cellUserNombre2For.setHorizontalAlignment(Element.ALIGN_CENTER);
-//                table.addCell(cellUserNombre2For);
-//            }
-//          
-//            document.add(table);
-//
-//            document.close();
-//
-//        } catch (Exception e) {
-//            System.err.println("Ocurrio un error al crear el archivo");
-//            //System.exit(-1);
-//        }
-//
-//    }
+    public void GenerarPDF(Connection connection, Integer[] id, String[] nombre, int opc, String nombreArchivo) {
+
+        Integer []IdsPDF = new Integer[30];
+        String []NombresPDF = new String[30];
+        IdsPDF = id;
+        NombresPDF = nombre;
+
+        Document document = new Document() ;
+
+        try {
+
+            PdfWriter.getInstance(document, new FileOutputStream(nombreArchivo+".pdf"));
+            document.open();
+            System.out.println("Probo");
+            PdfPTable table = new PdfPTable(2);
+            if(opc == 4){
+            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuario.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Usuario", fuenteUsuario));
+            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUser.setPaddingBottom(15);
+            table.addCell(cellUser);
+            
+            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Usuario", fuenteUsuarioNombre));
+            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUserNombre.setPaddingBottom(15);
+            table.addCell(cellUserNombre);
+            }
+            if(opc == 5){
+            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuario.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Lote", fuenteUsuario));
+            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUser.setPaddingBottom(15);
+            table.addCell(cellUser);
+            
+            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Lote", fuenteUsuarioNombre));
+            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUserNombre.setPaddingBottom(15);
+            table.addCell(cellUserNombre);
+            }
+            if(opc == 6){
+            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuario.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUser = new PdfPCell(new Paragraph("Cantidad", fuenteUsuario));
+            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUser.setPaddingBottom(15);
+            table.addCell(cellUser);
+            
+            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+            
+            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Producto", fuenteUsuarioNombre));
+            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+            cellUserNombre.setPaddingBottom(15);
+            table.addCell(cellUserNombre);
+            }
+            for (int x = 0; x < IdsPDF.length; x++) {
+                String nombreCelda = IdsPDF[x].toString();
+                
+                PdfPCell cellUserNombreFor = new PdfPCell(new Paragraph(nombreCelda));
+                cellUserNombreFor.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cellUserNombreFor);
+                
+                PdfPCell cellUserNombre2For = new PdfPCell(new Paragraph(NombresPDF[x]));
+                cellUserNombre2For.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cellUserNombre2For);
+            }
+          
+            document.add(table);
+
+            document.close();
+
+        } catch (Exception e) {
+            System.err.println("Ocurrio un error al crear el archivo");
+            //System.exit(-1);
+        }
+
+    }
 }
