@@ -107,10 +107,17 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return true;
     }
 
-    public boolean insertarUser(Connection connection,int userId,String pass,String nombre,String apellido,String correo,String telefono) {
+    public boolean insertarUser(int userId,String pass,String nombre,String apellido,String correo,String telefono) {
         Boolean b;
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         String query = " insert into Users (user_id, pass, Nombre, Apellido, Correo, Telefono)"
                 + " values (?, ?, ?, ?, ?, ?)";
@@ -143,11 +150,19 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actUser(Connection connection, User user) {
+    public boolean actUser( User user) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         // the mysql select statement
         String query = "SELECT user_id from Users where user_id=" + user.getId_User() + "";
 
@@ -191,11 +206,19 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean borrarUser(Connection connection, User user) {
+    public boolean borrarUser( User user) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         // the mysql select statement
         String query = "SELECT user_id from Users where user_id=" + user.getId_User() + "";
 
@@ -237,12 +260,20 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
     }
 
     ///////////////////////////////////////////////////////     LOTES     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public boolean inertarLote(Connection connection, int id, String nombre) {
+    public boolean inertarLote( int id, String nombre) {
         //Insertion 
         // create a sql date object so we can use it in our INSERT statement
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         // the mysql insert statement
         String query = " insert into Lote (IdLote, Nombre)"
                 + " values (?, ?)";
@@ -274,11 +305,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actLote(Connection connection, Lote lote) {
+    public boolean actLote( Lote lote) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql select statement
         String query = "SELECT IDLote from Lote where IDLote=" + lote.getIDLote() + "";
 
@@ -332,12 +370,19 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
     }
 
     ///////////////////////////////////////////////////////     ITEMS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public boolean insertarItem(Connection connection, Item item) {
+    public boolean insertarItem( Item item) {
         //Insertion 
         // create a sql date object so we can use it in our INSERT statement
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql insert statement
         String query = " insert into Productos (IdItem ,IDLote, Cantidad, NombreProd, Proveedor, Precio, Razon)"
                 + " values (?, ?, ?, ?, ?, ?, ?)";
@@ -373,11 +418,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actItem(Connection connection, Item item) {
+    public boolean actItem( Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql select statement
         String query = "SELECT IdItem from Productos where IdItem=" + item.getIdItem() + "";
 
@@ -417,11 +469,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean agregarItem(Connection connection, Item item) {
+    public boolean agregarItem( Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql select statement
         String query = "SELECT IdItem, Cantidad from Productos where IdItem=" + item.getIdItem() + "";
 
@@ -458,11 +517,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean sacarItem(Connection connection, Item item) {
+    public boolean sacarItem( Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql select statement
         String query = "SELECT IdItem, Cantidad from Productos where IdItem=" + item.getIdItem() + "";
 
@@ -499,11 +565,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean vaciarLote(Connection connection, int IdLote) {
+    public boolean vaciarLote( int IdLote) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
+        
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // the mysql select statement
         String query = "SELECT IdLote from Lote where IdLote=" + IdLote + "";
 
@@ -576,11 +649,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
 
     }
 
-    public ResultSet ListaGeneral(Connection connection, int x) {
+    public ResultSet ListaGeneral( int x) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         String query = "";
         int id;
         String nombre;

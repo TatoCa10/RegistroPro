@@ -734,7 +734,7 @@ public class Servlet_Menu extends HttpServlet {
                     String Apellido = request.getParameter("ApellidoUserReg");
                     String Correo = request.getParameter("CorreoUserReg");
                     String Telefono = request.getParameter("TelUserReg");
-                    b = service.insertarUser(connection, idCrear, pass, Nombre, Apellido, Correo, Telefono);
+                    b = service.insertarUser(idCrear, pass, Nombre, Apellido, Correo, Telefono);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -768,7 +768,7 @@ public class Servlet_Menu extends HttpServlet {
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
 
-                    b = service.inertarLote(connection, IdLote, NombreLote);
+                    b = service.inertarLote(IdLote, NombreLote);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -812,7 +812,7 @@ public class Servlet_Menu extends HttpServlet {
                     item.setPrecio(precioProducto);
                     item.setRazon(razonProducto);
 
-                    b = service.insertarItem(connection, item);
+                    b = service.insertarItem(item);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -843,7 +843,7 @@ public class Servlet_Menu extends HttpServlet {
                 case 4:
                     Integer[] idsUser = new Integer[8];
                     String[] NombresUsers = new String[8];
-                    rs = service.ListaGeneral(connection, 4);
+                    rs = service.ListaGeneral(4);
                     int i = 0;
                     while (rs.next()) {
                         idsUser[i] = (rs.getInt(1));
@@ -889,7 +889,7 @@ public class Servlet_Menu extends HttpServlet {
                     if (opcion == 5) {
                         Integer[] idsLotes = new Integer[30];
                         String[] NombresLotes = new String[30];
-                        rs = service.ListaGeneral(connection, 5);
+                        rs = service.ListaGeneral(5);
                         i = 0;
                         while (rs.next()) {
                             idsLotes[i] = (rs.getInt(1));
@@ -938,7 +938,7 @@ public class Servlet_Menu extends HttpServlet {
                         ArrayList<String> NombresItems = new ArrayList<String>();
                         ArrayList<Integer> Cant = new ArrayList<Integer>();
 
-                        rs = service.ListaGeneral(connection, 6);
+                        rs = service.ListaGeneral(6);
                         i = 0;
                         while (rs.next()) {
                             idsItems.add(rs.getInt(1));
@@ -1002,7 +1002,7 @@ public class Servlet_Menu extends HttpServlet {
                     user.setCorreo(CorreoUsAct);
                     user.setTelefono(TelUsAct);
 
-                    b = service.actUser(connection, user);
+                    b = service.actUser(user);
 
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
@@ -1026,7 +1026,7 @@ public class Servlet_Menu extends HttpServlet {
                     String NombreLoteAct = request.getParameter("NombreLoteAct");
                     lote.setIDLote(IdLoteAct);
                     lote.setNombreLote(NombreLoteAct);
-                    b = service.actLote(connection, lote);
+                    b = service.actLote(lote);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -1073,7 +1073,7 @@ public class Servlet_Menu extends HttpServlet {
                     item.setPrecio(PrecioItem);
                     item.setRazon(RazonItem);
 
-                    b = service.actItem(connection, item);
+                    b = service.actItem(item);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -1105,7 +1105,7 @@ public class Servlet_Menu extends HttpServlet {
 
                     int IdUserToDelete = Integer.parseInt(request.getParameter("IdUserDel"));
                     user.setId_User(IdUserToDelete);
-                    b = service.borrarUser(connection, user);
+                    b = service.borrarUser(user);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -1141,7 +1141,7 @@ public class Servlet_Menu extends HttpServlet {
                     int CantidadSacar = Integer.parseInt(request.getParameter("CantProdDelete"));
                     item.setIdItem(IdItemSacar);
                     item.setCantidad(CantidadSacar);
-                    b = service.sacarItem(connection, item);
+                    b = service.sacarItem(item);
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
@@ -1173,7 +1173,7 @@ public class Servlet_Menu extends HttpServlet {
 
                     item.setIdItem(IdItemIn);
                     item.setCantidad(Canti);
-                    b = service.agregarItem(connection, item);
+                    b = service.agregarItem(item);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
@@ -1206,7 +1206,7 @@ public class Servlet_Menu extends HttpServlet {
                         Integer[] idsUsersPDF = new Integer[30];
                         String[] NombresUsersPDF = new String[30];
                         String Archivo = request.getParameter("NombrePDFUser");
-                        rs = service.ListaGeneral(connection, 4);
+                        rs = service.ListaGeneral(4);
                         i = 0;
                         while (rs.next()) {
                             idsUsersPDF[i] = (rs.getInt(1));
@@ -1233,7 +1233,7 @@ public class Servlet_Menu extends HttpServlet {
                         String[] NombresUsersPDF2 = new String[30];
                         String ArchivoL = request.getParameter("NombrePDFLote");
 
-                        rs = service.ListaGeneral(connection, 5);
+                        rs = service.ListaGeneral(5);
                         i = 0;
                         while (rs.next()) {
                             idsUsersPDF2[i] = (rs.getInt(1));
@@ -1260,7 +1260,7 @@ public class Servlet_Menu extends HttpServlet {
                         String[] NombresUsersPDF2 = new String[100];
                         String ArchivoP = request.getParameter("NombrePDFProd");
 
-                        rs = service.ListaGeneral(connection, 6);
+                        rs = service.ListaGeneral(6);
                         i = 0;
                         while (rs.next()) {
                             idsUsersPDF2[i] = (rs.getInt(3));
