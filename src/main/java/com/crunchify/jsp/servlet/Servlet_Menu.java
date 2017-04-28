@@ -726,6 +726,9 @@ public class Servlet_Menu extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             connection = conexion.getConnection();
+            User user = new User();
+            Lote lote = new Lote();
+            Item item = new Item();
             int opcion = Integer.parseInt(request.getParameter("opcion"));
 
             switch (opcion) {
@@ -766,6 +769,40 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</html>");
                     }
                     ;
+                case 2:
+                    int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
+                    String NombreLote = request.getParameter("NombreLoteReg");
+
+                    lote.setIDLote(IdLote);
+                    lote.setNombreLote(NombreLote);
+                    b = service.inertarLote(connection, lote);
+
+                    if (b == true) {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Registro Lote</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Lote -> " + IdLote + " agregado Satisfactoriamente, con el nombre:'' " + NombreLote + "''</h1>");
+                        out.println("<p>Serás dirigido automáticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearLote.html" + ">Aquí</a></p>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    } else {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Servlet Servlet_Menu</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "CrearLote.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Error interno en la creacion del Lote, el Id del lote ya existe, intentelo nuevamente...</h1>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    }
+                    ;
+
             }
 
         } catch (URISyntaxException ex) {
