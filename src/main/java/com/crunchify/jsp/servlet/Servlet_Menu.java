@@ -1027,31 +1027,33 @@ public class Servlet_Menu extends HttpServlet {
                     lote.setIDLote(IdLoteAct);
                     lote.setNombreLote(NombreLoteAct);
                     b = service.actLote(lote);
+                    
+                    response.sendRedirect("indexMainMenu.html");
 
-                    if (b == true) {
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Actualizar Lote</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<h1>Se actualizo correctamente el Lote: " + IdLoteAct + "</h1>");
-                        out.println("</body>");
-                        out.println("</html>");
-
-                    } else {
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Agregacion Lote</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "ActLote.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<p>No se logro actualizar el Lote, Serás dirigido automáticamente en cinco segundos nuevamente al formulario de actualizacion. En caso contrario, puedes salir al menu principal, haciendo click <a href=" + "indexMainMenu.html" + ">Aquí</a></p>");
-                        out.println("</body>");
-                        out.println("</html>");
-                    }
+//                    if (b == true) {
+//                        out.println("<!DOCTYPE html>");
+//                        out.println("<html>");
+//                        out.println("<head>");
+//                        out.println("<title>Actualizar Lote</title>");
+//                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+//                        out.println("</head>");
+//                        out.println("<body>");
+//                        out.println("<h1>Se actualizo correctamente el Lote: " + IdLoteAct + "</h1>");
+//                        out.println("</body>");
+//                        out.println("</html>");
+//
+//                    } else {
+//                        out.println("<!DOCTYPE html>");
+//                        out.println("<html>");
+//                        out.println("<head>");
+//                        out.println("<title>Agregacion Lote</title>");
+//                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "ActLote.html" + ">");
+//                        out.println("</head>");
+//                        out.println("<body>");
+//                        out.println("<p>No se logro actualizar el Lote, Serás dirigido automáticamente en cinco segundos nuevamente al formulario de actualizacion. En caso contrario, puedes salir al menu principal, haciendo click <a href=" + "indexMainMenu.html" + ">Aquí</a></p>");
+//                        out.println("</body>");
+//                        out.println("</html>");
+//                    }
 
                     ;
                 case 11:
