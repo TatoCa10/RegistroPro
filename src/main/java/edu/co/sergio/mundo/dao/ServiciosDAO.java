@@ -339,18 +339,18 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     preparedStmt.executeUpdate();
                     b = true;
                     //Revisar si esta vacio
-                    query = "SELECT IDLote from Productos where IDLote=" + lote.getIDLote() + "";
-                    rs = st.executeQuery(query);
-                    while (rs.next()) {
-                        id[0] = rs.getInt("IDLote");
-
-                        if (id[0] != null) {
-                            query = "UPDATE Productos SET IDLote=" + lote.getIDLote() + " where IDLote=" + lote.getIDLote() + "";
-                            preparedStmt = connection.prepareStatement(query);
-                            preparedStmt.executeUpdate();
-                            b = true;
-                        }
-                    }
+//                    query = "SELECT IDLote from Productos where IDLote=" + lote.getIDLote() + "";
+//                    rs = st.executeQuery(query);
+//                    while (rs.next()) {
+//                        id[0] = rs.getInt("IDLote");
+//
+//                        if (id[0] != null) {
+//                            query = "UPDATE Productos SET IDLote=" + lote.getIDLote() + " where IDLote=" + lote.getIDLote() + "";
+//                            preparedStmt = connection.prepareStatement(query);
+//                            preparedStmt.executeUpdate();
+//                            b = true;
+//                        }
+//                    }
 
                 }
             }
