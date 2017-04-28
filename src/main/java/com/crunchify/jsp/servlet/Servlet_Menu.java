@@ -54,11 +54,11 @@ public class Servlet_Menu extends HttpServlet {
             switch (opcion) {
                 case 1:
                     int id = Integer.parseInt(request.getParameter("IdUserReg"));
-                    String pass = request.getParameter("NPassUserReg");
-                    String Nombre = request.getParameter("NombreUserReg");
-                    String Apellido = request.getParameter("ApellidoUserReg");
-                    String Correo = request.getParameter("CorreoUserReg");
-                    String Telefono = request.getParameter("TelUserReg");
+                    //String pass = request.getParameter("NPassUserReg");
+                    //String Nombre = request.getParameter("NombreUserReg");
+                    //String Apellido = request.getParameter("ApellidoUserReg");
+                    //String Correo = request.getParameter("CorreoUserReg");
+                    //String Telefono = request.getParameter("TelUserReg");
                     
                     
                     //user.setId_User(id);
@@ -80,7 +80,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
                         out.println("<h1>"+id+"</h1>");
-                        out.println("<h1>"+Nombre+"</h1>");
+                        //out.println("<h1>"+Nombre+"</h1>");
                         out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
                         out.println("</body>");
                         out.println("</html>");
@@ -97,6 +97,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+            
                     ;
 
                 case 2:
