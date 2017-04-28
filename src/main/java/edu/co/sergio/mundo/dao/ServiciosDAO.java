@@ -237,7 +237,7 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
     }
 
     ///////////////////////////////////////////////////////     LOTES     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public boolean inertarLote(Connection connection, Lote lote) {
+    public boolean inertarLote(Connection connection, int id, String nombre) {
         //Insertion 
         // create a sql date object so we can use it in our INSERT statement
         Calendar calendar = Calendar.getInstance();
@@ -253,8 +253,8 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         try {
 
             preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1, lote.getIDLote());
-            preparedStmt.setString(2, lote.getNombreLote());
+            preparedStmt.setInt(1, id);
+            preparedStmt.setString(2, nombre);
 
             // execute the preparedstatement
             preparedStmt.executeUpdate();

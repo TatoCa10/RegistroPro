@@ -97,7 +97,7 @@ public class Servlet_Menu extends HttpServlet {
                 // }
 
                 // ;
-                case 2:
+                /*case 2:
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
 
@@ -129,7 +129,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    ;
+                    ;*/
                 case 3:
                     String nombreProducto = request.getParameter("NombreProductoReg");
                     String proveedorProducto = request.getParameter("ProveedorProductoReg");
@@ -726,9 +726,6 @@ public class Servlet_Menu extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             connection = conexion.getConnection();
-            User user = new User();
-            Lote lote = new Lote();
-            Item item = new Item();
             int opcion = Integer.parseInt(request.getParameter("opcion"));
 
             switch (opcion) {
@@ -773,9 +770,7 @@ public class Servlet_Menu extends HttpServlet {
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
 
-                    lote.setIDLote(IdLote);
-                    lote.setNombreLote(NombreLote);
-                    b = service.inertarLote(connection, lote);
+                    b = service.inertarLote(connection, IdLote, NombreLote);
 
                     if (b == true) {
                         out.println("<!DOCTYPE html>");
