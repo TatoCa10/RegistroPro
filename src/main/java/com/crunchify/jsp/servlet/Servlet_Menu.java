@@ -39,14 +39,14 @@ public class Servlet_Menu extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, URISyntaxException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        //PrintWriter out = response.getWriter();
         //connection = service.GenerarConexion();
-        connection = conexion.getConnection();
-        User user = new User();
-        Lote lote = new Lote();
-        Item item = new Item();
-        int opcion = Integer.parseInt(request.getParameter("opcion"));
-        switch (opcion) {
+        //connection = conexion.getConnection();
+        //User user = new User();
+        //Lote lote = new Lote();
+        //Item item = new Item();
+        //int opcion = Integer.parseInt(request.getParameter("opcion"));
+        //switch (opcion) {
             /*case 1:
             //int idCrear = Integer.parseInt(request.getParameter("IdUserReg"));
             //String pass = request.getParameter("NPassUserReg");
@@ -684,7 +684,7 @@ public class Servlet_Menu extends HttpServlet {
             }
             ;*/
         }
-    }
+    //}
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -841,8 +841,8 @@ public class Servlet_Menu extends HttpServlet {
 
                     ;
                 case 4:
-                    Integer[] idsUser = new Integer[30];
-                    String[] NombresUsers = new String[30];
+                    Integer[] idsUser = new Integer[8];
+                    String[] NombresUsers = new String[8];
                     rs = service.ListaGeneral(connection, 4);
                     int i = 0;
                     while (rs.next()) {
@@ -880,7 +880,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</tbody>");
                     out.println("</table>");
                     out.println("<center>");
-                    out.println("<p>Regresar al menu principal <a href=" + "indexMainMenu.html" + "> Click Aqu√≠</a></p>");
+                    out.println("<p>Regresar al menu principal <a href=" + "indexMainMenu.html" + "> Click Aqui≠</a></p>");
                     out.println("</center>");
                     out.println("</body>");
                     out.println("</html>");
