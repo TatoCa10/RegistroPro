@@ -934,16 +934,16 @@ public class Servlet_Menu extends HttpServlet {
                     ;
                 case 6:
                     if (opcion == 6) {
-                        Integer[] idsItems = new Integer[100];
-                        String[] NombresItems = new String[100];
-                        Integer[] Cant = new Integer[100];
+                        ArrayList<Integer> idsItems = new ArrayList<Integer>();
+                        ArrayList<String> NombresItems = new ArrayList<String>();
+                        ArrayList<Integer> Cant = new ArrayList<Integer>();
 
                         rs = service.ListaGeneral(connection, 6);
                         i = 0;
                         while (rs.next()) {
-                            idsItems[i] = (rs.getInt(1));
-                            Cant[i] = (rs.getInt(3));
-                            NombresItems[i] = (rs.getString(4));
+                            idsItems.add(rs.getInt(1));
+                            Cant.add(rs.getInt(3));
+                            NombresItems.add(rs.getString(4));
                             i++;
                         }
                         //NombresItems = service.ListarNombreItem(connection);
@@ -969,11 +969,11 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
-                        for (int x = 0; x < idsItems.length; x++) {
+                        for (int x = 0; x < idsItems.size(); x++) {
                             out.println("<tr>");
-                            out.println("<td class=\"text-left\">" + NombresItems[x] + "</td>");
-                            out.println("<td class=\"text-left\">" + idsItems[x] + "</td>");
-                            out.println("<td class=\"text-left\">" + Cant[x] + "</td>");
+                            out.println("<td class=\"text-left\">" + NombresItems.get(x) + "</td>");
+                            out.println("<td class=\"text-left\">" + idsItems.get(x) + "</td>");
+                            out.println("<td class=\"text-left\">" + Cant.get(x) + "</td>");
                             out.println("</tr>");
                         }
                         out.println("</tbody>");
