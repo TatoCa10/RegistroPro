@@ -130,7 +130,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</html>");
                     }
                     ;*/
-                case 3:
+                /*case 3:
                     String nombreProducto = request.getParameter("NombreProductoReg");
                     String proveedorProducto = request.getParameter("ProveedorProductoReg");
                     int IdProduc = Integer.parseInt(request.getParameter("IdProductoReg"));
@@ -175,7 +175,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</html>");
                     }
 
-                    ;
+                    ;*/
                 case 4:
                     Integer[] idsUser = new Integer[30];
                     String[] NombresUsers = new String[30];
@@ -726,6 +726,9 @@ public class Servlet_Menu extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             connection = conexion.getConnection();
+            User user = new User();
+            Lote lote = new Lote();
+            Item item = new Item();
             int opcion = Integer.parseInt(request.getParameter("opcion"));
 
             switch (opcion) {
@@ -796,6 +799,51 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    ;
+                    case 3:
+                    String nombreProducto = request.getParameter("NombreProductoReg");
+                    String proveedorProducto = request.getParameter("ProveedorProductoReg");
+                    int IdProduc = Integer.parseInt(request.getParameter("IdProductoReg"));
+                    int cantidadProducto = Integer.parseInt(request.getParameter("CantidadProductoReg"));                   
+                    int precioProducto = Integer.parseInt(request.getParameter("PrecioProductoReg"));
+                    int razonProducto = Integer.parseInt(request.getParameter("RazonProductoReg"));
+                    int idLoteProd = Integer.parseInt(request.getParameter("PathProductoReg"));
+
+                    item.setIdItem(IdProduc);
+                    item.setIDLote(idLoteProd);
+                    item.setCantidad(cantidadProducto);
+                    item.setNombreProd(nombreProducto);
+                    item.setProveedor(proveedorProducto);
+                    item.setPrecio(precioProducto);
+                    item.setRazon(razonProducto);
+
+                    b = service.insertarItem(connection, item);
+
+                    if (b == true) {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Creacion Producto</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Se creo correctamente el producto: " + nombreProducto + "</h1>");
+                        out.println("<p>Serás dirigido automáticamente en cinco segundos al menu principal nuevamente. En caso contrario, puedes ir al Menu, haciendo click <a href=" + "CrearProducto.html" + ">Aquí</a></p>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    } else {
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Creacion Producto</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "CrearProducto.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Error en el ingreso de datos, intentelo nuevamente...</h1>");
+                        out.println("</body>");
+                        out.println("</html>");
+                    }
+
                     ;
 
             }
