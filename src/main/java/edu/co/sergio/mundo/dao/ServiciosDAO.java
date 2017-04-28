@@ -342,7 +342,7 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     query = "SELECT IDLote from Productos where IDLote=" + lote.getIDLote() + "";
                     rs = st.executeQuery(query);
                     while (rs.next()) {
-                        id[0] = rs.getInt(1);
+                        id[0] = rs.getInt("IDLote");
 
                         if (id[0] != null) {
                             query = "UPDATE Productos SET IDLote=" + lote.getIDLote() + " where IDLote=" + lote.getIDLote() + "";
