@@ -43,49 +43,46 @@ public class Servlet_Menu extends HttpServlet {
         try {
             //connection = service.GenerarConexion();
             connection = conexion.getConnection();
-            User user= new User();
-            Lote lote= new Lote();
-            Item item= new Item();
-            
+            User user = new User();
+            Lote lote = new Lote();
+            Item item = new Item();
+
             int opcion = Integer.parseInt(request.getParameter("opcion"));
-            
-            
-            
+
             switch (opcion) {
-                case 1:
-                    int id = Integer.parseInt(request.getParameter("IdUserReg"));
+                /*case 1:
+                    //int idCrear = Integer.parseInt(request.getParameter("IdUserReg"));
                     //String pass = request.getParameter("NPassUserReg");
                     //String Nombre = request.getParameter("NombreUserReg");
                     //String Apellido = request.getParameter("ApellidoUserReg");
                     //String Correo = request.getParameter("CorreoUserReg");
                     //String Telefono = request.getParameter("TelUserReg");
-                    
-                    
+
                     //user.setId_User(id);
                     //user.setPass(pass);
                     //user.setNombre(Nombre);
                     //user.setApellido(Apellido);
                     //user.setCorreo(Correo);
                     //user.setTelefono(Telefono);
-                    b=true;
+                    b = true;
                     //b = service.insertarUser(connection, id,pass,Nombre,Apellido,Correo,Telefono);
 
-                    if (b == true) {
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Servlet Servlet_Menu</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
-                        out.println("<h1>"+id+"</h1>");
-                        //out.println("<h1>"+Nombre+"</h1>");
-                        out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
-                        out.println("</body>");
-                        out.println("</html>");
-                    } else {
-                        out.println("<!DOCTYPE html>");
+                    // if (b == true) {
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<title>Servlet Servlet_Menu</title>");
+                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
+                    //out.println("<h1>"+idCrear+"</h1>");
+                    //out.println("<h1>"+Nombre+"</h1>");
+                    out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
+                    out.println("</body>");
+                    out.println("</html>");
+                    // } else {
+                    /*     out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
                         out.println("<title>Servlet Servlet_Menu</title>");
@@ -96,14 +93,15 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
                         out.println("</body>");
                         out.println("</html>");
-                    }
-            
-                    ;
+                     */
+                    // }
+
+                   // ;
 
                 case 2:
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
-                    
+
                     lote.setIDLote(IdLote);
                     lote.setNombreLote(NombreLote);
                     b = service.inertarLote(connection, lote);
@@ -142,7 +140,7 @@ public class Servlet_Menu extends HttpServlet {
                     int precioProducto = Integer.parseInt(request.getParameter("PrecioProductoReg"));
                     int razonProducto = Integer.parseInt(request.getParameter("RazonProductoReg"));
                     int idLoteProd = Integer.parseInt(request.getParameter("PathProductoReg"));
-                    
+
                     item.setIdItem(IdProduc);
                     item.setIDLote(idLoteProd);
                     item.setCantidad(cantidadProducto);
@@ -150,7 +148,7 @@ public class Servlet_Menu extends HttpServlet {
                     item.setProveedor(proveedorProducto);
                     item.setPrecio(precioProducto);
                     item.setRazon(razonProducto);
-                    
+
                     b = service.insertarItem(connection, item);
 
                     if (b == true) {
@@ -180,13 +178,13 @@ public class Servlet_Menu extends HttpServlet {
 
                     ;
                 case 4:
-                    Integer []idsUser = new Integer[30];
-                    String []NombresUsers = new String[30];
+                    Integer[] idsUser = new Integer[30];
+                    String[] NombresUsers = new String[30];
                     rs = service.ListaGeneral(connection, 4);
-                    int i=0;
+                    int i = 0;
                     while (rs.next()) {
-                        idsUser[i]=(rs.getInt(1));
-                        NombresUsers[i]=(rs.getString(3));
+                        idsUser[i] = (rs.getInt(1));
+                        NombresUsers[i] = (rs.getString(3));
                         i++;
                     }
 
@@ -226,13 +224,13 @@ public class Servlet_Menu extends HttpServlet {
                     ;
                 case 5:
                     if (opcion == 5) {
-                        Integer []idsLotes = new Integer[30];
-                        String []NombresLotes = new String[30];
+                        Integer[] idsLotes = new Integer[30];
+                        String[] NombresLotes = new String[30];
                         rs = service.ListaGeneral(connection, 5);
-                        i=0;
+                        i = 0;
                         while (rs.next()) {
-                            idsLotes[i]=(rs.getInt(1));
-                            NombresLotes[i]=(rs.getString(2));
+                            idsLotes[i] = (rs.getInt(1));
+                            NombresLotes[i] = (rs.getString(2));
                             i++;
                         }
 
@@ -273,16 +271,16 @@ public class Servlet_Menu extends HttpServlet {
                     ;
                 case 6:
                     if (opcion == 6) {
-                        Integer []idsItems = new Integer[100];
-                        String []NombresItems = new String[100];
-                        Integer []Cant = new Integer[100];
+                        Integer[] idsItems = new Integer[100];
+                        String[] NombresItems = new String[100];
+                        Integer[] Cant = new Integer[100];
 
                         rs = service.ListaGeneral(connection, 6);
-                        i=0;
+                        i = 0;
                         while (rs.next()) {
-                            idsItems[i]=(rs.getInt(1));
-                            Cant[i]=(rs.getInt(3));
-                            NombresItems[i]=(rs.getString(4));
+                            idsItems[i] = (rs.getInt(1));
+                            Cant[i] = (rs.getInt(3));
+                            NombresItems[i] = (rs.getString(4));
                             i++;
                         }
                         //NombresItems = service.ListarNombreItem(connection);
@@ -374,14 +372,14 @@ public class Servlet_Menu extends HttpServlet {
                     String passUserAct = request.getParameter("PassUsuarioAct");
                     String CorreoUsAct = request.getParameter("CorreoUsuarioAct");
                     String TelUsAct = request.getParameter("TelUsuarioAct");
-                    
+
                     user.setId_User(IdUsAct);
                     user.setPass(passUserAct);
                     user.setNombre(NombreUsAct);
                     user.setApellido(ApellidoUsAct);
                     user.setCorreo(CorreoUsAct);
                     user.setTelefono(TelUsAct);
-                    
+
                     b = service.actUser(connection, user);
 
                     if (b == true) {
@@ -454,7 +452,7 @@ public class Servlet_Menu extends HttpServlet {
                     String ProveedorItem = request.getParameter("ProveedorProductoAct");
                     int PrecioItem = Integer.parseInt(request.getParameter("PrecioProductoAct"));
                     int RazonItem = Integer.parseInt(request.getParameter("RazonProductoAct"));
-                    
+
                     item.setIdItem(IdItem);
                     item.setIDLote(IdItemLote);
                     item.setCantidad(CantidadItem);
@@ -560,7 +558,7 @@ public class Servlet_Menu extends HttpServlet {
                 case 15:
                     int IdItemIn = Integer.parseInt(request.getParameter("IdProdIn"));
                     int Canti = Integer.parseInt(request.getParameter("CantProdIn"));
-                    
+
                     item.setIdItem(IdItemIn);
                     item.setCantidad(Canti);
                     b = service.agregarItem(connection, item);
@@ -592,86 +590,83 @@ public class Servlet_Menu extends HttpServlet {
                     ;
 
                 case 16:
-                    if (opcion==16){
-                    Integer []idsUsersPDF = new Integer[30];
-                    String []NombresUsersPDF = new String[30];
-                    String Archivo = request.getParameter("NombrePDFUser");
-                    rs = service.ListaGeneral(connection, 4);
-                    i=0;
-                    while (rs.next()) {
-                        idsUsersPDF[i]=(rs.getInt(1));
-                        NombresUsersPDF[i]=(rs.getString(3));
-                        i++;
-                    }
-                    
-                   // service.GenerarPDF(connection, idsUsersPDF, NombresUsersPDF,4,Archivo);
+                    if (opcion == 16) {
+                        Integer[] idsUsersPDF = new Integer[30];
+                        String[] NombresUsersPDF = new String[30];
+                        String Archivo = request.getParameter("NombrePDFUser");
+                        rs = service.ListaGeneral(connection, 4);
+                        i = 0;
+                        while (rs.next()) {
+                            idsUsersPDF[i] = (rs.getInt(1));
+                            NombresUsersPDF[i] = (rs.getString(3));
+                            i++;
+                        }
 
-                    out.println("<!DOCTYPE html>");
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title>Eliminar Usuario</title>");
-                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<h1>Se genero correctamente el PDF" + "</h1>");
-                    out.println("</body>");
-                    out.println("</html>");
+                        // service.GenerarPDF(connection, idsUsersPDF, NombresUsersPDF,4,Archivo);
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Eliminar Usuario</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Se genero correctamente el PDF" + "</h1>");
+                        out.println("</body>");
+                        out.println("</html>");
                     }
                     ;
                 case 17:
-                    if(opcion==17){
-                    Integer []idsUsersPDF2 = new Integer[30];
-                    String []NombresUsersPDF2 = new String[30];
-                    String ArchivoL = request.getParameter("NombrePDFLote");
-                    
-                    
-                    rs = service.ListaGeneral(connection, 5);
-                    i=0;
-                    while (rs.next()) {
-                        idsUsersPDF2[i]=(rs.getInt(1));
-                        NombresUsersPDF2[i]=(rs.getString(2));
-                        i++;
-                    }
-                   // service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,5, ArchivoL);
+                    if (opcion == 17) {
+                        Integer[] idsUsersPDF2 = new Integer[30];
+                        String[] NombresUsersPDF2 = new String[30];
+                        String ArchivoL = request.getParameter("NombrePDFLote");
 
-                    out.println("<!DOCTYPE html>");
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title>Eliminar Usuario</title>");
-                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<h1>Se genero correctamente el PDF" + "</h1>");
-                    out.println("</body>");
-                    out.println("</html>");
+                        rs = service.ListaGeneral(connection, 5);
+                        i = 0;
+                        while (rs.next()) {
+                            idsUsersPDF2[i] = (rs.getInt(1));
+                            NombresUsersPDF2[i] = (rs.getString(2));
+                            i++;
+                        }
+                        // service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,5, ArchivoL);
+
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Eliminar Usuario</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Se genero correctamente el PDF" + "</h1>");
+                        out.println("</body>");
+                        out.println("</html>");
                     }
                     ;
                 case 18:
-                    if(opcion==18){
-                     Integer []idsUsersPDF2 = new Integer[100];
-                    String []NombresUsersPDF2 = new String[100];
-                    String ArchivoP = request.getParameter("NombrePDFProd");
-                    
-                    
-                    rs = service.ListaGeneral(connection, 6);
-                    i=0;
-                    while (rs.next()) {
-                        idsUsersPDF2[i]=(rs.getInt(3));
-                        NombresUsersPDF2[i]=(rs.getString(4));
-                        i++;
-                    }
-                  //  service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,6,ArchivoP);
+                    if (opcion == 18) {
+                        Integer[] idsUsersPDF2 = new Integer[100];
+                        String[] NombresUsersPDF2 = new String[100];
+                        String ArchivoP = request.getParameter("NombrePDFProd");
 
-                    out.println("<!DOCTYPE html>");
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title>Eliminar Usuario</title>");
-                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<h1>Se genero correctamente el PDF" + "</h1>");
-                    out.println("</body>");
-                    out.println("</html>");
+                        rs = service.ListaGeneral(connection, 6);
+                        i = 0;
+                        while (rs.next()) {
+                            idsUsersPDF2[i] = (rs.getInt(3));
+                            NombresUsersPDF2[i] = (rs.getString(4));
+                            i++;
+                        }
+                        //  service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,6,ArchivoP);
+
+                        out.println("<!DOCTYPE html>");
+                        out.println("<html>");
+                        out.println("<head>");
+                        out.println("<title>Eliminar Usuario</title>");
+                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                        out.println("</head>");
+                        out.println("<body>");
+                        out.println("<h1>Se genero correctamente el PDF" + "</h1>");
+                        out.println("</body>");
+                        out.println("</html>");
                     }
                     ;
 
@@ -693,7 +688,8 @@ public class Servlet_Menu extends HttpServlet {
                     }
                     ;
             }
-        }catch(SQLException e){}
+        } catch (SQLException e) {
+        }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -728,6 +724,33 @@ public class Servlet_Menu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        try {
+            connection = conexion.getConnection();
+            int opcion = Integer.parseInt(request.getParameter("opcion"));
+
+            switch (opcion) {
+                case 1:
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<title>Servlet Servlet_Menu</title>");
+                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
+                    //out.println("<h1>"+idCrear+"</h1>");
+                    //out.println("<h1>"+Nombre+"</h1>");
+                    out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aquí</a></p>");
+                    out.println("</body>");
+                    out.println("</html>");
+                    ;
+            }
+
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
