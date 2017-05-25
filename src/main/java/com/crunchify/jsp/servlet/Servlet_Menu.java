@@ -763,6 +763,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
                 case 2:
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
@@ -838,7 +839,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-
+                    break
                     ;
                 case 4:
                     Integer[] idsUser = new Integer[8];
@@ -884,6 +885,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</center>");
                     out.println("</body>");
                     out.println("</html>");
+                    break
                     ;
                 case 5:
                     if (opcion == 5) {
@@ -931,6 +933,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
                 case 6:
                     if (opcion == 6) {
@@ -985,6 +988,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
                 case 9:
 
@@ -1018,7 +1022,7 @@ public class Servlet_Menu extends HttpServlet {
                         }
                         out.println("</body>");
                         out.println("</html>");
-
+                        break
                     ;
                 case 10:
 
@@ -1054,7 +1058,7 @@ public class Servlet_Menu extends HttpServlet {
 //                        out.println("</body>");
 //                        out.println("</html>");
 //                    }
-
+break
                     ;
                 case 11:
 
@@ -1101,7 +1105,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-
+                    break
                     ;
                 case 12:
 
@@ -1132,7 +1136,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-
+                    break
                     ;
                 case 13:
                     //Borrar Lote No es Permitido
@@ -1167,7 +1171,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-
+                    break
                     ;
                 case 15:
                     int IdItemIn = Integer.parseInt(request.getParameter("IdProdIn"));
@@ -1200,7 +1204,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-
+                    break
                     ;
 
                 case 16:
@@ -1228,6 +1232,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
                 case 17:
                     if (opcion == 17) {
@@ -1255,6 +1260,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
                 case 18:
                     if (opcion == 18) {
@@ -1282,6 +1288,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
 
                 case 100:
@@ -1300,6 +1307,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
+                    break
                     ;
 
             }
