@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.crunchify.jsp.servlet;
 
 import edu.co.sergio.mundo.dao.ServiciosDAO;
@@ -40,6 +35,7 @@ public class BarServlet extends HttpServlet {
         int width = 500;
         int height = 350;
         ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
+
 
     }
 

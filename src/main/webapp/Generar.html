@@ -21,6 +21,9 @@
             #form5{
                 display: none
             }
+            #form6{
+                display: none
+            }
             .button {
                 background-color: #4CAF50; /* Green */
                 border: none;
@@ -116,6 +119,10 @@
                     $("#form5").toggle(1000, function () {
                     });
                 });
+                $("#button6").click(function () {
+                    $("#form6").toggle(1000, function () {
+                    });
+                });
             });
         </script>
     </head>
@@ -153,6 +160,14 @@
         <form class='contacto' id="form5">
             <center>
                 <a href="Mail3.html"><img src="Pictures/correo.png" width="128" height="128"></a>
+            </center>
+        </form>
+
+
+        <button id="button6" class="button button2" style="margin-top: 50px">Inversion</button>
+        <form class='contacto' id="form6">
+            <center>
+                <a href="Chart.html"><img src="Pictures/inv.png" width="150" height="140"></a>
             </center>
         </form>
 

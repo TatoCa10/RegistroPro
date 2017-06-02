@@ -9,9 +9,13 @@
         <servlet-name>Menu</servlet-name>
         <url-pattern>/Servlet_Menu</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>HSSFCreate</servlet-name>
         <url-pattern>/HSSFCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BarServlet</servlet-name>
+        <url-pattern>/BarServlet</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
@@ -32,5 +36,9 @@
     <servlet>
         <servlet-name>HSSFCreate</servlet-name>
         <servlet-class>com.crunchify.jsp.servlet.HSSFCreate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BarServlet</servlet-name>
+        <servlet-class>com.crunchify.jsp.servlet.BarServlet</servlet-class>
     </servlet>
 </web-app>
