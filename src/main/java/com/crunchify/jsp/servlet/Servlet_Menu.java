@@ -869,8 +869,8 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<tbody class=\"table-hover\">");
                     for (int x = 0; x < Arreglo.size(); x=x+2) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + Arreglo.get(i) + "</td>");
-                        out.println("<td class=\"text-left\">" + Arreglo.get(i+1) + "</td>");
+                        out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
                         out.println("</tr>");
                        
                     }
