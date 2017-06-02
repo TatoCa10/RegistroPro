@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Listado De Lotes Usuario</title>
+        <title>Generar Archivo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='estilos.css'>
@@ -120,6 +120,12 @@
         <br><br><br><br>
 
         <button id="button3" class="button button3">Listar Productos -> PDF</button>
+        <form class='contacto' id="form3" action="Servlet_Menu?opcion=18" method="post">
+            <div><label>Nombre Del Archivo:</label><input type="text" name="NombrePDFProd"></div>
+            <input type="submit" name= "Productos_PDF" value="Generar PDF">
+        </form>
+        
+        <button id="button3" class="button button3">Listar Todo -> Excel</button>
         <form class='contacto' id="form3" action="Servlet_Menu?opcion=18" method="post">
             <div><label>Nombre Del Archivo:</label><input type="text" name="NombrePDFProd"></div>
             <input type="submit" name= "Productos_PDF" value="Generar PDF">
