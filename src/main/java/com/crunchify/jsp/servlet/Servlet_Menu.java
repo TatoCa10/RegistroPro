@@ -618,6 +618,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
                     for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                        out.println("<h2>"+"Entro"+"</h2>");
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
@@ -630,7 +631,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 20:
                     String UserNombreFull = request.getParameter("UserNombreFull");
-                    ArregloPersonalizada = service.BusquedaPersonalizada(20, UserNombreFull, 0);
+                    ArrayList ArregloPersonalizada2 = new ArrayList();
+                    ArregloPersonalizada2 = service.BusquedaPersonalizada(20, UserNombreFull, 0);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -640,10 +642,10 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada2.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada2.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada2.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -653,7 +655,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 21:
                     int UserIdBusqueda = Integer.parseInt(request.getParameter("UserIdBusqueda"));
-                    ArregloPersonalizada = service.BusquedaPersonalizada(21, null, UserIdBusqueda);
+                    ArrayList ArregloPersonalizada3 = new ArrayList();
+                    ArregloPersonalizada3 = service.BusquedaPersonalizada(21, null, UserIdBusqueda);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -663,10 +666,10 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada3.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada3.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada3.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -677,7 +680,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 22:
                     String LoteInicial = request.getParameter("LoteInicial");
-                    ArregloPersonalizada = service.BusquedaPersonalizada(22, LoteInicial, 0);
+                    ArrayList ArregloPersonalizada4 = new ArrayList();
+                    ArregloPersonalizada4 = service.BusquedaPersonalizada(22, LoteInicial, 0);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -687,10 +691,10 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada4.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada4.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada4.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -700,7 +704,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 23:
                     String LoteNombreFull = request.getParameter("LoteNombreFull");
-                    ArregloPersonalizada = service.BusquedaPersonalizada(23, LoteNombreFull, 0);
+                    ArrayList ArregloPersonalizada5 = new ArrayList();
+                    ArregloPersonalizada5 = service.BusquedaPersonalizada(23, LoteNombreFull, 0);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -710,10 +715,10 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada5.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada5.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada5.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -724,7 +729,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 24:
                     int LoteIdBusqueda = Integer.parseInt(request.getParameter("LoteIdBusqueda"));
-                    ArregloPersonalizada = service.BusquedaPersonalizada(24, null, LoteIdBusqueda);
+                    ArrayList ArregloPersonalizada6 = new ArrayList();
+                    ArregloPersonalizada6 = service.BusquedaPersonalizada(24, null, LoteIdBusqueda);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -734,10 +740,10 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada6.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada6.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada6.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -748,7 +754,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 25:
                     int ProductoIdBusqueda = Integer.parseInt(request.getParameter("ProductoIdBusqueda"));
-                    ArregloPersonalizada = service.BusquedaPersonalizada(25, null, ProductoIdBusqueda);
+                    ArrayList ArregloPersonalizada7 = new ArrayList();
+                    ArregloPersonalizada7 = service.BusquedaPersonalizada(25, null, ProductoIdBusqueda);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -758,11 +765,11 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada7.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 2) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -773,7 +780,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 26:
                     String ProductoInicial = request.getParameter("ProductoInicial");
-                    ArregloPersonalizada = service.BusquedaPersonalizada(26, ProductoInicial, 0);
+                    ArrayList ArregloPersonalizada8 = new ArrayList();
+                    ArregloPersonalizada8 = service.BusquedaPersonalizada(26, ProductoInicial, 0);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -783,11 +791,11 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada8.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 2) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -798,7 +806,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 27:
                     String ProductoNombreFull = request.getParameter("ProductoNombreFull");
-                    ArregloPersonalizada = service.BusquedaPersonalizada(27, ProductoNombreFull, 0);
+                    ArrayList ArregloPersonalizada9 = new ArrayList();
+                    ArregloPersonalizada9 = service.BusquedaPersonalizada(27, ProductoNombreFull, 0);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -808,22 +817,23 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada9.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 2) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
 
-                    break;
+                    break; 
 
-                case 28:
+                case 28: 
                     int MayorA = Integer.parseInt(request.getParameter("MayorA"));
-                    ArregloPersonalizada = service.BusquedaPersonalizada(28, null, MayorA);
+                    ArrayList ArregloPersonalizada10 = new ArrayList();
+                    ArregloPersonalizada10 = service.BusquedaPersonalizada(28, null, MayorA);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -833,11 +843,11 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada10.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 2) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
@@ -848,7 +858,8 @@ public class Servlet_Menu extends HttpServlet {
 
                 case 29:
                     int MenorA = Integer.parseInt(request.getParameter("MenorA"));
-                    ArregloPersonalizada = service.BusquedaPersonalizada(29, null, MenorA);
+                    ArrayList ArregloPersonalizada11 = new ArrayList();
+                    ArregloPersonalizada11 = service.BusquedaPersonalizada(29, null, MenorA);
 
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -858,11 +869,11 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada11.size(); x++) {
                         out.println("<tr>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
-                        out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 2) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x + 1) + "</td>");
+                        out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
