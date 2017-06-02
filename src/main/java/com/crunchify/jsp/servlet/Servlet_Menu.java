@@ -1082,14 +1082,18 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>Cerrando Sesion</title>");
+                     out.println("<link rel='stylesheet' href='index_style.css'>");
                     out.println("</head>");
-                    out.println("<body>");
+                    out.println("<body background=\"Pictures/Fondos/fondo2.jpg\">");
                     out.println("<center>");
-                    out.println("<h1>" + "El Valor Total Invertido En Bodega Es De:" + "</h1>");
-                    out.println("<h1>" + x + "</h1>");
+                    out.println("<br><br><br>");
+                    out.println("<p id=\"header\"><em>"+ x +"</em></p>");
+                    out.println("<p id=\"subheader\">Total Inversion</p>");
+                    out.println(" <br><br><br><br><br><br><br><br><br><br><br>");
+                    out.println("<h3 style=\"color: #ffffff\"><font face=\"sans-serif\"> Regresa al menu principal haciendo <a target=_self href=\"indexMainMenu.html\"> Click Aqui</a></font></h3>");
                     out.println("</center>");
                     out.println("</body>");
-                    out.println("</html>");
+                    out.println("</html>");                   
 
                     break;
 
