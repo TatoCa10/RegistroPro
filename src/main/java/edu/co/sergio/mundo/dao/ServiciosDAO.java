@@ -964,7 +964,7 @@ public class ServiciosDAO {
                     ResultSet rs = st.executeQuery(query);
                     while (rs.next()) {
                         Arreglo.add(rs.getInt(1));
-                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getInt(7));
                         Arreglo.add(rs.getString(4));
                     }
 
@@ -989,7 +989,7 @@ public class ServiciosDAO {
                     ResultSet rs = st.executeQuery(query);
                     while (rs.next()) {
                         Arreglo.add(rs.getInt(1));
-                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getInt(7));
                         Arreglo.add(rs.getString(4));
                     }
 

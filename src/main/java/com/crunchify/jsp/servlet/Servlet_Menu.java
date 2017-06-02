@@ -297,9 +297,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<table class=\"table-fill\">");
                         out.println("<thead>");
                         out.println("<tr>");
-                        out.println("<th class=\"text-left\">Nombre</th>");
                         out.println("<th class=\"text-left\">ID</th>");
                         out.println("<th class=\"text-left\">Cantidad</th>");
+                        out.println("<th class=\"text-left\">Nombre Producto</th>");
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
@@ -1007,7 +1007,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
-                    out.println("<th class=\"text-left\">Cantidad</th>");
+                    out.println("<th class=\"text-left\">Precio</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
@@ -1051,7 +1051,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
-                    out.println("<th class=\"text-left\">Cantidad</th>");
+                    out.println("<th class=\"text-left\">Precio</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
