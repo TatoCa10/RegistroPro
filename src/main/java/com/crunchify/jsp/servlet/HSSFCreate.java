@@ -2,6 +2,7 @@ package com.crunchify.jsp.servlet;
 
 import edu.co.sergio.mundo.dao.ServiciosDAO;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,13 +32,24 @@ public class HSSFCreate extends HttpServlet {
         response.setContentType("application/vnd.ms-excel");
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet = wb.createSheet("new sheet");
-
+        ArrayList a = new ArrayList();
+        a = dao.Consultas();
+        ArrayList Users = new ArrayList();
+        Users = (ArrayList)a.get(0);
+        ArrayList Lotes = new ArrayList();
+        Lotes = (ArrayList)a.get(1);
+        ArrayList Prod = new ArrayList();
+        Prod = (ArrayList) a.get(2);
        
         Map<String, Object[]> data = new HashMap<String, Object[]>();
 		data.put("1", new Object[] {"", "", "Usuarios", "", "", "","", "Lotes","","","","","Productos"});
-		data.put("2", new Object[] {"", "Id", "", "Nombre","","","Id lote","","Nombre Lote","","","Id Producto","Cantidad","Nombre Producto"});
-		data.put("3", new Object[] {"", "Id", "", "Nombre","","","Id lote","","Nombre Lote","","","Id Producto","Cantidad","Nombre Producto"});
-		data.put("4", new Object[] {3d, "Dean", 700000d});
+		data.put("2", new Object[] {"", "ID", "", "Nombre","","","Id Lote","","Nom.Lote","","","Id Prod.","Cantidad","Nombre Producto"});
+                
+                
+		data.put("3", new Object[] {"", Users.get(0), "", Users.get(0),"","",Lotes.get(0),"",Lotes.get(1),"","",Prod.get(0),Prod.get(1),Prod.get(2)});
+		
+                
+                data.put("4", new Object[] {3d, "Dean", 700000d});
 		
 		Set<String> keyset = data.keySet();
 		int rownum = 0;
