@@ -3,6 +3,7 @@ package com.crunchify.jsp.servlet;
 import edu.co.sergio.mundo.dao.ServiciosDAO;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,8 +11,17 @@ import java.util.Set;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.formula.FormulaParseException;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Comment;
+import org.apache.poi.ss.usermodel.Hyperlink;
+import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.util.CellAddress;
+import org.apache.poi.ss.util.CellRangeAddress;
 
 public class HSSFCreate extends HttpServlet {
 
@@ -42,7 +52,8 @@ public class HSSFCreate extends HttpServlet {
         Prod = dao.ArrayProd();
         int celda = 0;
         String cadena = "";
-
+        int cellindex = 0;                
+      
         Map<String, Object[]> data = new HashMap<String, Object[]>();
         data.put("1", new Object[]{"", "", "Usuarios", "", ""});
         data.put("2", new Object[]{"", "ID", "", "Nombre", ""});
@@ -83,6 +94,8 @@ public class HSSFCreate extends HttpServlet {
         }
 
         data.put("4", new Object[]{3d, "Dean", 700000d});
+        
+        
         Set<String> keyset = data.keySet();
         int rownum = 0;
         for (String key : keyset) {
