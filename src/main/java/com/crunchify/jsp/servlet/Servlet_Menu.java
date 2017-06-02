@@ -1281,6 +1281,7 @@ break
                     break
                     ;
 
+
                 case 100:
                     if (opcion == 100) {
                         service.LogOut(connection);

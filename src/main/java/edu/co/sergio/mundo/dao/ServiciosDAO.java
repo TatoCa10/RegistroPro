@@ -756,7 +756,7 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
             case 19:
                 
                 Arreglo.clear();
-                query = "select * from Users where Nombre like'"+Letra+"%'";
+                query = "select * from Users where Nombre like '"+Letra+"%'";
                 i=0;
 
                 try {
@@ -1137,11 +1137,56 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String query="select SUM(Precio) from Productos";
+        String query="select COUNT(IDLote) from Lote";
+        ArrayList Arreglo= new ArrayList();
+                    
+            try {
+               Statement st = connection.createStatement();
+               ResultSet rs = st.executeQuery(query);
+               
+               while(rs.next()){
+               Arreglo.add(rs.getInt(1));
+               Arreglo.add(100-rs.getInt(1));
+               }
+               
+            } catch (SQLException ex) {
+                Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         
+            return Arreglo;
+    
+    }
+    public ArrayList PrecioInv(){
         
+         Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-            return null;
+        String query="select SUM(Precio), SUM(Cantidad) from Productos";
+        ArrayList Arreglo= new ArrayList();
+                    
+            try {
+               Statement st = connection.createStatement();
+               ResultSet rs = st.executeQuery(query);
+               int x=0;
+               while(rs.next()){
+               x=x+(rs.getInt(1)*rs.getInt(2));
+               
+               }
+               Arreglo.add(x);
+            } catch (SQLException ex) {
+                Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        
+            return Arreglo;
     }
 }
 
