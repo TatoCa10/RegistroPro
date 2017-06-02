@@ -1164,4 +1164,73 @@ public class ServiciosDAO {
 
         return Arreglo;
     }
+
+    public ArrayList Consultas() {
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "select * from Users";
+        ArrayList Users = new ArrayList();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                Users.add(rs.getInt(1));
+                Users.add(rs.getInt(3));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        query = "select * from Lote";
+        ArrayList Lote = new ArrayList();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                Lote.add(rs.getInt(1));
+                Lote.add(rs.getInt(2));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        query = "select * from Productos";
+        ArrayList Prod = new ArrayList();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                Prod.add(rs.getInt(1));
+                Prod.add(rs.getString(4));
+                Prod.add(rs.getString(3));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList Arreglo = new ArrayList();
+        Arreglo.add(Users);
+        Arreglo.add(Lote);
+        Arreglo.add(Prod);
+
+        return Arreglo;
+    }
+
 }

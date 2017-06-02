@@ -1,5 +1,6 @@
 package com.crunchify.jsp.servlet;
 
+import edu.co.sergio.mundo.dao.ServiciosDAO;
 import java.io.*;
 import java.util.Date;
 import java.util.HashMap;
@@ -26,16 +27,16 @@ public class HSSFCreate extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException, IOException {
-
+        ServiciosDAO dao = new ServiciosDAO();
         response.setContentType("application/vnd.ms-excel");
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet = wb.createSheet("new sheet");
 
        
         Map<String, Object[]> data = new HashMap<String, Object[]>();
-		data.put("1", new Object[] {"Emp No.", "Name", "Salary"});
-		data.put("2", new Object[] {1d, "John", 1500000d});
-		data.put("3", new Object[] {2d, "Sam", 800000d});
+		data.put("1", new Object[] {"", "", "Usuarios", "", "", "","", "Lotes","","","","","Productos"});
+		data.put("2", new Object[] {"", "Id", "", "Nombre","","","Id lote","","Nombre Lote","","","Id Producto","Cantidad","Nombre Producto"});
+		data.put("3", new Object[] {"", "Id", "", "Nombre","","","Id lote","","Nombre Lote","","","Id Producto","Cantidad","Nombre Producto"});
 		data.put("4", new Object[] {3d, "Dean", 700000d});
 		
 		Set<String> keyset = data.keySet();
