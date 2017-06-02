@@ -846,7 +846,7 @@ public class Servlet_Menu extends HttpServlet {
                 case 4:
                     Arreglo.clear();
                     Arreglo = service.ListaGeneral(4);
-                    i=0;
+                    
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
                     out.println("<head>");
@@ -909,7 +909,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
-                        for (int x = 0; x < Arreglo.size(); x++) {
+                        for (int x = 0; x < Arreglo.size(); x=x+2) {
                             out.println("<tr>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
@@ -955,7 +955,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
-                        for (int x = 0; x < Arreglo.size(); x++) {
+                        for (int x = 0; x < Arreglo.size(); x=x+3) {
                             out.println("<tr>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
