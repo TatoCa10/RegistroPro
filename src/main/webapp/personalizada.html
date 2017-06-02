@@ -17,12 +17,13 @@
                 border-radius: 6px;
                 padding: 45px 45px 20px;
                 margin-top: 50px;
-                background-color: white;
-                box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+                background-color: none;
+
             }
             .contacto label{
                 display: block;
                 font-weight: bold;
+                color: white;
             }
             .contacto div{
                 margin-bottom: 15px;
@@ -152,17 +153,19 @@
                         <div><input type="submit" name= "RegistrarProducto" value="Buscar"></div>
                     </form>
                 </th>
-                <th></th>
-                <th><form class='contacto' name="FormularioTabla" action="Servlet_Menu?opcion=29" method="post">
-                        <div><label> Productos Con El Precio Menor A:</label><input type="text" name="MenorA"></div>
-                        <div><input type="submit" name= "RegistrarProducto" value="Buscar"></div>
-                    </form>
-                </th>
-            </tr>
-        </table>
-    <center>
-        <br><br><br><br><br><br><br><br><br><br><br>
-        <h3 style="color: #ffffff"><font face="sans-serif"> Regresa al menu principal haciendo <a target=_self href="indexMainMenu.html"> Click Aqui</a></font></h3> 
-    </center>  
+                <th>
+            <center>
+                <form class='contacto'>
+                <h3 style="color: #ffffff; margin-top: 30px; padding-top: 60px"><font face="sans-serif"> Regresa al menu principal haciendo <a target=_self href="indexMainMenu.html"> Click Aqui</a></font></h3> 
+                </form>
+            </center> 
+        </th>
+        <th><form class='contacto' name="FormularioTabla" action="Servlet_Menu?opcion=29" method="post">
+                <div><label> Productos Con El Precio Menor A:</label><input type="text" name="MenorA"></div>
+                <div><input type="submit" name= "RegistrarProducto" value="Buscar"></div>
+            </form>
+        </th>
+    </tr>
+</table>
 </body>
 </html>
