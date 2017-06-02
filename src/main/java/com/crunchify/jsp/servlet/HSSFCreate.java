@@ -65,8 +65,8 @@ public class HSSFCreate extends HttpServlet {
         celda = celda + 1;
         data.put("" + celda + "", new Object[]{"", "ID", "Cant.", "Nom. Lote", ""});
         celda = celda + 1;
-        for (int y = Prod.size() + Lotes.size(); y < Lotes.size(); y++) {
-            data.put("" + y + "", new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
+        for (int y = 0; y < Lotes.size(); y++) {
+            data.put("" + celda + "", new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
             celda++;
         }
 
