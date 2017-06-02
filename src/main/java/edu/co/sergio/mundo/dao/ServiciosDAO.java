@@ -27,24 +27,8 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-/**
- * @author Isabel-Fabian
- * @since 12/08/2015
- * @version 2 Clase que permite la gestion de la tabla Depto en la base de
- * datos.
- *
- * CREATE TABLE Depto( id_depto integer, nom_depto varchar(40), PRIMARY
- * KEY(id_depto) );
- */
 public class ServiciosDAO {
 
-    /**
-     * Funcion que permite obtener una lista de los departamentos existentes en
-     * la base de datos
-     *
-     * @return List<Departamento> Retorna la lista de Departamentos existentes
-     * en la base de datos
-     */
     int Id_Global;
     Fecha date = new Fecha();
     String desc;
@@ -54,11 +38,9 @@ public class ServiciosDAO {
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
-        // the mysql select statement
         String query = "select user_id,pass from Users where user_id=" + user_id + "";
         //String query2 = "select pass from Users where pass='"+pass+"'"; 
 
-        // create the mysql update and insert preparedstatement
         PreparedStatement preparedStmt = null;
 
         int id;

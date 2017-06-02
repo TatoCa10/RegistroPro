@@ -18,6 +18,9 @@
             #form4{
                 display: none
             }
+            #form5{
+                display: none
+            }
             .button {
                 background-color: #4CAF50; /* Green */
                 border: none;
@@ -109,6 +112,10 @@
                     $("#form4").toggle(1000, function () {
                     });
                 });
+                $("#button5").click(function () {
+                    $("#form5").toggle(1000, function () {
+                    });
+                });
             });
         </script>
     </head>
@@ -136,9 +143,16 @@
         </form>
 
         <button id="button4" class="button button4" style="margin-top: 50px">Listar Todo -> Excel</button>
-        <form class='contacto' id="form4" action="Servlet_Menu?opcion=18" method="post">
+        <form class='contacto' id="form4">
             <center>
                 <a href="HSSFCreate"><img src="Pictures/excel.png" width="60" height="60"></a>
+            </center>
+        </form>
+
+        <button id="button5" class="button button5" style="margin-top: 50px">Redactar Correo</button>
+        <form class='contacto' id="form5">
+            <center>
+                <a href="Mail3.html"><img src="Pictures/correo.png" width="128" height="128"></a>
             </center>
         </form>
 
