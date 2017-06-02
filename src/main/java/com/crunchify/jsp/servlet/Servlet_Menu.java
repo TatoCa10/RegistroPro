@@ -631,7 +631,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x=x+2) {
+                    for (int x = 0; x < ArregloPersonalizada.size(); x = x + 2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
@@ -673,7 +673,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada2.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada2.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada2.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada2.get(x + 1) + "</td>");
@@ -714,7 +714,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada3.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada3.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada3.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada3.get(x + 1) + "</td>");
@@ -756,7 +756,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada4.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada4.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada4.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada4.get(x + 1) + "</td>");
@@ -796,7 +796,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada5.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada5.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada5.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada5.get(x + 1) + "</td>");
@@ -838,7 +838,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada6.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada6.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada6.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada6.get(x + 1) + "</td>");
@@ -875,12 +875,13 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Cantidad</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada7.size(); x=x+3) {
+                    for (int x = 0; x < ArregloPersonalizada7.size(); x = x + 3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x + 1) + "</td>");
@@ -918,12 +919,13 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Cantidad</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada8.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada8.size(); x=x+3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x + 1) + "</td>");
@@ -961,12 +963,13 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Cantidad</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada9.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada9.size(); x=x+3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x + 1) + "</td>");
@@ -1004,12 +1007,13 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Cantidad</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada10.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada10.size(); x=x+3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x + 1) + "</td>");
@@ -1047,12 +1051,13 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Cantidad</th>");
                     out.println("<th class=\"text-left\">Nombre Producto</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada11.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada11.size(); x=x+3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x + 1) + "</td>");
