@@ -649,7 +649,7 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
 
     }
 
-    public ResultSet ListaGeneral( int x) {
+    public ArrayList ListaGeneral( int x) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
@@ -662,61 +662,373 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         }
         
         String query = "";
-        int id;
-        String nombre;
-
+        ArrayList Arreglo = new ArrayList();
+        int i=0;
         switch (x) {
 
             case 4:
+                Arreglo.clear();
                 query = "select * from Users";
+                i=0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    return rs;
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(3));
+                    }
+                    
+                    return Arreglo;
 
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
+                break;
 
             case 5:
-
+                Arreglo.clear();
                 query = "select * from Lote";
-
+                i=0;
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    return rs;
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(2));
+                    }
+                    return Arreglo;
 
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
+                break;
 
             case 6:
-
+                Arreglo.clear();
                 query = "select * from Productos";
-
+                i=0;
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    return rs;
+                    while(rs.next()){
+                            Arreglo.add(rs.getInt(1));
+                            Arreglo.add(rs.getInt(3));
+                            Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
 
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
+                break;
         }
         return null;
 
     }
+    
+    public ArrayList BusquedaPersonalizada(int x, String Letra,  int Num){
+        
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String query = "";
+        ArrayList Arreglo = new ArrayList();
+        int i=0;
+        switch (x) {
+        /////////////////////////////////USERS//////////////////////////////////
+            case 19:
+                
+                Arreglo.clear();
+                query = "select * from Users where Nombre like'"+Letra+"%'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(3));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+            case 20:
+                
+                Arreglo.clear();
+                query = "select * from Users where Nombre ='"+Letra+"'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(3));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+                case 21:
+                
+                Arreglo.clear();
+                query = "select * from Users where user_id ="+Num+"";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(3));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+        //////////////////////////////LOTE//////////////////////////////////////
+            case 22:
+                Arreglo.clear();
+                query = "select * from Lote where Nombre like'"+Letra+"%'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(2));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+            case 23:
+                Arreglo.clear();
+                query = "select * from Lote where Nombre ='"+Letra+"'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(2));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+            case 24:
+                Arreglo.clear();
+                query = "select * from Lote where IdLote ="+Num+"";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getString(2));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+        
+        //////////////////////////////////ITEMS/////////////////////////////////
+            case 25:
+                Arreglo.clear();
+                query = "select * from Productos where IdItem ="+Num+"";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getInt(3));
+                    Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+            case 26:
+                Arreglo.clear();
+                query = "select * from Productos where NombreProd like '"+Letra+"%'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getInt(3));
+                    Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+        
+             case 27:
+                Arreglo.clear();
+                query = "select * from Productos where NombreProd ='"+Letra+"'";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getInt(3));
+                    Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+            case 28:
+                Arreglo.clear();
+                query = "select * from Productos where Precio >"+Num+"";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getInt(3));
+                    Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+                
+            case 29:
+                Arreglo.clear();
+                query = "select * from Productos where Precio <"+Num+"";
+                i=0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while(rs.next()){
+                    Arreglo.add(rs.getInt(1));
+                    Arreglo.add(rs.getInt(3));
+                    Arreglo.add(rs.getString(4));
+                    }
+                    
+                    return Arreglo;
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                
+                break;
+        }
+        
+        
+        return null;
+}
 
     public void GenerarPDF(Connection connection, Integer[] id, String[] nombre, int opc, String nombreArchivo) {
 
@@ -812,4 +1124,25 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         }
 
     }
+    
+    public ArrayList EspacioDisp(){
+        
+         Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        String query="select SUM(Precio) from Productos";
+        
+        
+        
+            return null;
+    }
 }
+
+    
