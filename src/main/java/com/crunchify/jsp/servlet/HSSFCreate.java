@@ -40,15 +40,35 @@ public class HSSFCreate extends HttpServlet {
         Lotes = dao.ArrayLotes();
         ArrayList Prod = new ArrayList();
         Prod = dao.ArrayProd();
+        int celda = 0;
 
         Map<String, Object[]> data = new HashMap<String, Object[]>();
-        data.put("1", new Object[]{"", "", "Usuarios", "", "", "", "", "Lotes", "", "", "", "", "Productos"});
-        data.put("2", new Object[]{"", "ID", "", "Nombre", "", "", "Id Lote", "", "Nom.Lote", "", "", "Id Prod.", "Cantidad", "Nombre Producto"});
+        data.put("1", new Object[]{"", "", "Usuarios", "", ""});
+        data.put("2", new Object[]{"", "ID", "", "Nombre", ""});
+        celda = 3;
+        for (int i = 0; i < Users.size(); i++) {
+            data.put("" + celda + "", new Object[]{"", Users.get(i), "", Users.get(i), ""});
+            celda++;
+        }
+        celda = celda + 1;
+        data.put("" + celda + "", new Object[]{"", "", "Lotes", "", ""});
+        celda = celda + 1;
+        data.put("" + celda + "", new Object[]{"", "ID", "", "Nom. Lote", ""});
 
-        for (int i = 0; i < Prod.size(); i++) {
-            data.put(""+i+"", new Object[]{"", Users.get(i), "", Users.get(i), "", "", Lotes.get(i), "", Lotes.get(i), "", "", Prod.get(i), Prod.get(i), Prod.get(i)});
+        for (int x = 0; x < Lotes.size(); x++) {
+            data.put("" + celda + "", new Object[]{"", Lotes.get(x), "", Lotes.get(x), ""});
+            celda++;
         }
 
+        celda = celda + 1;
+        data.put("" + celda + "", new Object[]{"", "", "Productos", "", ""});
+        celda = celda + 1;
+        data.put("" + celda + "", new Object[]{"", "ID", "Cant.", "Nom. Lote", ""});
+        celda = celda + 1;
+        for (int y = Prod.size() + Lotes.size(); y < Lotes.size(); y++) {
+            data.put("" + y + "", new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
+            celda++;
+        }
 
         data.put("4", new Object[]{3d, "Dean", 700000d});
 
