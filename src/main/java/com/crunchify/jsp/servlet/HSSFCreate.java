@@ -46,7 +46,7 @@ public class HSSFCreate extends HttpServlet {
 		data.put("2", new Object[] {"", "ID", "", "Nombre","","","Id Lote","","Nom.Lote","","","Id Prod.","Cantidad","Nombre Producto"});
                 
                 
-		data.put("3", new Object[] {"", Users.get(0), "", Users.get(0),"","",Lotes.get(0),"",Lotes.get(1),"","",Prod.get(0),Prod.get(1),Prod.get(2)});
+		data.put("3", new Object[] {"", Users.get(0), "", Users.get(1),"","",Lotes.get(0),"",Lotes.get(1),"","",Prod.get(0),Prod.get(1),Prod.get(2)});
 		
                 
                 data.put("4", new Object[] {3d, "Dean", 700000d});
