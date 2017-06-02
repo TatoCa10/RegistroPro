@@ -47,7 +47,7 @@ public class HSSFCreate extends HttpServlet {
         data.put("2", new Object[]{"", "ID", "", "Nombre", ""});
         celda = 3;
         for (int i = 0; i < Users.size(); i++) {
-            data.put("" + celda + "", new Object[]{"", Users.get(i), "", Users.get(i), ""});
+            data.put(String.valueOf(celda), new Object[]{"", Users.get(i), "", Users.get(i), ""});
             celda++;
         }
         celda = celda + 1;
@@ -56,7 +56,7 @@ public class HSSFCreate extends HttpServlet {
         data.put("" + celda + "", new Object[]{"", "ID", "", "Nom. Lote", ""});
 
         for (int x = 0; x < Lotes.size(); x++) {
-            data.put("" + celda + "", new Object[]{"", Lotes.get(x), "", Lotes.get(x), ""});
+            data.put(String.valueOf(celda), new Object[]{"", Lotes.get(x), "", Lotes.get(x), ""});
             celda++;
         }
 
@@ -66,7 +66,7 @@ public class HSSFCreate extends HttpServlet {
         data.put("" + celda + "", new Object[]{"", "ID", "Cant.", "Nom. Lote", ""});
         celda = celda + 1;
         for (int y = 0; y < Lotes.size(); y++) {
-            data.put("" + celda + "", new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
+            data.put(String.valueOf(celda), new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
             celda++;
         }
 
