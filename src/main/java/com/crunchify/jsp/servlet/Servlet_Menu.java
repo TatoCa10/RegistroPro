@@ -631,7 +631,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada.size(); x=x+2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
@@ -880,7 +880,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
 
-                    for (int x = 0; x < ArregloPersonalizada7.size(); x++) {
+                    for (int x = 0; x < ArregloPersonalizada7.size(); x=x+3) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x + 1) + "</td>");
