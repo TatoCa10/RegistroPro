@@ -1082,7 +1082,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>Cerrando Sesion</title>");
-                     out.println("<link rel='stylesheet' href='index_style.css'>");
+                     out.println("<link rel='stylesheet' href='index_style2.css'>");
                     out.println("</head>");
                     out.println("<body background=\"Pictures/Fondos/fondo2.jpg\">");
                     out.println("<center>");
