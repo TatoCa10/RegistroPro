@@ -41,37 +41,48 @@ public class HSSFCreate extends HttpServlet {
         ArrayList Prod = new ArrayList();
         Prod = dao.ArrayProd();
         int celda = 0;
+        String cadena = "";
 
         Map<String, Object[]> data = new HashMap<String, Object[]>();
         data.put("1", new Object[]{"", "", "Usuarios", "", ""});
         data.put("2", new Object[]{"", "ID", "", "Nombre", ""});
         celda = 3;
+        cadena = Integer.toString(celda);
         for (int i = 0; i < Users.size(); i++) {
-            data.put(String.valueOf(celda), new Object[]{"", Users.get(i), "", Users.get(i), ""});
+            data.put(cadena, new Object[]{"", Users.get(i), "", Users.get(i), ""});
             celda++;
+            cadena= Integer.toString(celda);
         }
         celda = celda + 1;
-        data.put("" + celda + "", new Object[]{"", "", "Lotes", "", ""});
+        cadena = Integer.toString(celda);
+        data.put(cadena, new Object[]{"", "", "Lotes", "", ""});
         celda = celda + 1;
-        data.put("" + celda + "", new Object[]{"", "ID", "", "Nom. Lote", ""});
+        cadena = Integer.toString(celda);
+        data.put(cadena, new Object[]{"", "ID", "", "Nom. Lote", ""});
 
+        celda = celda + 1;
+        cadena= Integer.toString(celda);
         for (int x = 0; x < Lotes.size(); x++) {
-            data.put(String.valueOf(celda), new Object[]{"", Lotes.get(x), "", Lotes.get(x), ""});
+            data.put(cadena, new Object[]{"", Lotes.get(x), "", Lotes.get(x), ""});
             celda++;
+            cadena= Integer.toString(celda);
         }
 
         celda = celda + 1;
-        data.put("" + celda + "", new Object[]{"", "", "Productos", "", ""});
+        cadena= Integer.toString(celda);
+        data.put(cadena, new Object[]{"", "", "Productos", "", ""});
         celda = celda + 1;
-        data.put("" + celda + "", new Object[]{"", "ID", "Cant.", "Nom. Lote", ""});
+        cadena= Integer.toString(celda);
+        data.put(cadena, new Object[]{"", "ID", "Cant.", "Nom. Lote", ""});
         celda = celda + 1;
+        cadena= Integer.toString(celda);
         for (int y = 0; y < Lotes.size(); y++) {
-            data.put(String.valueOf(celda), new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
+            data.put(cadena, new Object[]{"", Users.get(y), "", Users.get(y), "", "", "", "", "", "", "", "", "", ""});
             celda++;
+            cadena= Integer.toString(celda);
         }
 
         data.put("4", new Object[]{3d, "Dean", 700000d});
-
         Set<String> keyset = data.keySet();
         int rownum = 0;
         for (String key : keyset) {
