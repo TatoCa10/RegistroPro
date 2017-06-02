@@ -616,14 +616,28 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Por Inicial</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Usuario</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada.size(); x++) {
-                        out.println("<h2>"+"Entro"+"</h2>");
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x) + "</td>");
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -641,6 +655,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Nombre Completo</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Usuario</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada2.size(); x++) {
                         out.println("<tr>");
@@ -648,6 +673,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada2.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -665,6 +693,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Por Id</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Usuario</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada3.size(); x++) {
                         out.println("<tr>");
@@ -672,6 +711,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada3.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -690,6 +732,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Lotes Por Inicial</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Lote</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada4.size(); x++) {
                         out.println("<tr>");
@@ -697,6 +750,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada4.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -714,6 +770,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Lotes Nombre Completo</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Lote</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada5.size(); x++) {
                         out.println("<tr>");
@@ -721,6 +788,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada5.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -739,6 +809,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Lotes Por Id</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Lote</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada6.size(); x++) {
                         out.println("<tr>");
@@ -746,6 +827,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada6.get(x + 1) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -764,6 +848,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Producto Por Id</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Producto</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada7.size(); x++) {
                         out.println("<tr>");
@@ -772,6 +867,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada7.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -790,6 +888,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Producto Por Inicial</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Producto</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada8.size(); x++) {
                         out.println("<tr>");
@@ -798,6 +907,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada8.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -816,6 +928,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Producto Nombre Completo</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Producto</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada9.size(); x++) {
                         out.println("<tr>");
@@ -824,13 +947,16 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada9.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
 
-                    break; 
+                    break;
 
-                case 28: 
+                case 28:
                     int MayorA = Integer.parseInt(request.getParameter("MayorA"));
                     ArrayList ArregloPersonalizada10 = new ArrayList();
                     ArregloPersonalizada10 = service.BusquedaPersonalizada(28, null, MayorA);
@@ -842,6 +968,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Productos Con Precio Mayor a "+MayorA+"</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Producto</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada10.size(); x++) {
                         out.println("<tr>");
@@ -850,6 +987,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada10.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
@@ -868,6 +1008,17 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h1>Resultado de la busqueda" + "</h1>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Productos Con Precio Mayor a "+MenorA+"</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">Id</th>");
+                    out.println("<th class=\"text-left\">Nombre Producto</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
 
                     for (int x = 0; x < ArregloPersonalizada11.size(); x++) {
                         out.println("<tr>");
@@ -876,6 +1027,9 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("<td class=\"text-left\">" + ArregloPersonalizada11.get(x + 2) + "</td>");
                         out.println("</tr>");
                     }
+                    out.println("</tbody>");
+                    out.println("</tbody>");
+                    out.println("</table>");
                     out.println("<a href=" + "personalizada.html" + ">" + "Pulsa Aqui Para Regresar" + "</a>");
                     out.println("</body>");
                     out.println("</html>");
