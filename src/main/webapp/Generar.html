@@ -15,6 +15,9 @@
             #form3{
                 display: none
             }
+            #form4{
+                display: none
+            }
             .button {
                 background-color: #4CAF50; /* Green */
                 border: none;
@@ -39,7 +42,7 @@
             }
 
             .button1:hover {
-                background-color: #f44336;
+                background-color: #4CAF50;
                 color: white;
             }
 
@@ -50,7 +53,7 @@
             }
 
             .button2:hover {
-                background-color: #f44336;
+                background-color: #008CBA;
                 color: white;
             }
 
@@ -71,8 +74,10 @@
                 border: 2px solid #e7e7e7;
             }
 
-            .button4:hover {background-color: #e7e7e7;}
-
+            .button4:hover {
+                background-color: #555555;
+                color: white;
+            }
             .button5 {
                 background-color: white;
                 color: black;
@@ -100,6 +105,10 @@
                     $("#form3").toggle(1000, function () {
                     });
                 });
+                $("#button4").click(function () {
+                    $("#form4").toggle(1000, function () {
+                    });
+                });
             });
         </script>
     </head>
@@ -123,14 +132,18 @@
         <form class='contacto' id="form3" action="Servlet_Menu?opcion=18" method="post">
             <div><label>Nombre Del Archivo:</label><input type="text" name="NombrePDFProd"></div>
             <input type="submit" name= "Productos_PDF" value="Generar PDF">
+            <img src="Pictures/pdf1icon.png">
         </form>
-        
-        <button id="button3" class="button button3">Listar Todo -> Excel</button>
-        <form class='contacto' id="form3" action="Servlet_Menu?opcion=18" method="post">
-            <div><label>Nombre Del Archivo:</label><input type="text" name="NombrePDFProd"></div>
-            <input type="submit" name= "Productos_PDF" value="Generar PDF">
+
+        <button id="button4" class="button button4" style="margin-top: 50px">Listar Todo -> Excel</button>
+        <form class='contacto' id="form4" action="Servlet_Menu?opcion=18" method="post">
+            <center>
+                <a href="HSSFCreate"><img src="Pictures/excel.png" width="60" height="60"></a>
+            </center>
         </form>
-    <center>
+
+
+    <center> 
         <br><br><br><br><br><br><br><br><br><br><br>
         <h3 style="color: #ffffff"><font face="sans-serif"> Regresa al menu principal haciendo <a target=_self href="indexMainMenu.html"> Click Aqui</a></font></h3> 
     </center> 
