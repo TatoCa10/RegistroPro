@@ -27,46 +27,42 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-
 /**
  * @author Isabel-Fabian
  * @since 12/08/2015
- * @version 2
- * Clase que permite la gestion de la tabla Depto en la base de datos.
- * 
- * CREATE TABLE Depto(
- *     id_depto integer,
- *     nom_depto varchar(40),
- *     PRIMARY KEY(id_depto)
- * );
+ * @version 2 Clase que permite la gestion de la tabla Depto en la base de
+ * datos.
+ *
+ * CREATE TABLE Depto( id_depto integer, nom_depto varchar(40), PRIMARY
+ * KEY(id_depto) );
  */
- 
-
 public class ServiciosDAO {
 
-	/**
-	 * Funcion que permite obtener una lista de los departamentos existentes en la base de datos
-	 * @return List<Departamento> Retorna la lista de Departamentos existentes en la base de datos
-	 */
-	int Id_Global;
-        Fecha date = new Fecha();
-        String desc;
+    /**
+     * Funcion que permite obtener una lista de los departamentos existentes en
+     * la base de datos
+     *
+     * @return List<Departamento> Retorna la lista de Departamentos existentes
+     * en la base de datos
+     */
+    int Id_Global;
+    Fecha date = new Fecha();
+    String desc;
 
-public boolean LogIn(Connection connection, int user_id, String pass) {
+    public boolean LogIn(Connection connection, int user_id, String pass) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
-        
-        
+
         // the mysql select statement
-        String query = "select user_id,pass from Users where user_id="+user_id+"";
+        String query = "select user_id,pass from Users where user_id=" + user_id + "";
         //String query2 = "select pass from Users where pass='"+pass+"'"; 
 
         // create the mysql update and insert preparedstatement
         PreparedStatement preparedStmt = null;
 
         int id;
-        String password=""; 
+        String password = "";
 
         try {
             Statement st = connection.createStatement();
@@ -96,22 +92,22 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return false;
 
     }
-    
-    public boolean LogOut(Connection connection){
+
+    public boolean LogOut(Connection connection) {
         String fecha = "";
         fecha = date.getDate().toString();
         int reg = 1;
-        desc="Cerro Sesion";
+        desc = "Cerro Sesion";
         RegistroAct(connection, desc);
-        Id_Global=-1;
+        Id_Global = -1;
         return true;
     }
 
-    public boolean insertarUser(int userId,String pass,String nombre,String apellido,String correo,String telefono) {
+    public boolean insertarUser(int userId, String pass, String nombre, String apellido, String correo, String telefono) {
         Boolean b;
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -150,19 +146,19 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actUser( User user) {
+    public boolean actUser(User user) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         // the mysql select statement
         String query = "SELECT user_id from Users where user_id=" + user.getId_User() + "";
 
@@ -206,19 +202,19 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean borrarUser( User user) {
+    public boolean borrarUser(User user) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         // the mysql select statement
         String query = "SELECT user_id from Users where user_id=" + user.getId_User() + "";
 
@@ -260,20 +256,20 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
     }
 
     ///////////////////////////////////////////////////////     LOTES     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public boolean inertarLote( int id, String nombre) {
+    public boolean inertarLote(int id, String nombre) {
         //Insertion 
         // create a sql date object so we can use it in our INSERT statement
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         // the mysql insert statement
         String query = " insert into Lote (IdLote, Nombre)"
                 + " values (?, ?)";
@@ -305,12 +301,12 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actLote( Lote lote) {
+    public boolean actLote(Lote lote) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -370,13 +366,13 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
     }
 
     ///////////////////////////////////////////////////////     ITEMS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public boolean insertarItem( Item item) {
+    public boolean insertarItem(Item item) {
         //Insertion 
         // create a sql date object so we can use it in our INSERT statement
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -418,12 +414,12 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean actItem( Item item) {
+    public boolean actItem(Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -469,12 +465,12 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean agregarItem( Item item) {
+    public boolean agregarItem(Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -517,12 +513,12 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean sacarItem( Item item) {
+    public boolean sacarItem(Item item) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -565,12 +561,12 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return b;
     }
 
-    public boolean vaciarLote( int IdLote) {
+    public boolean vaciarLote(int IdLote) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
         boolean b = true;
-        
+
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -649,7 +645,7 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
 
     }
 
-    public ArrayList ListaGeneral( int x) {
+    public ArrayList ListaGeneral(int x) {
 
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
@@ -660,26 +656,26 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         String query = "";
         ArrayList Arreglo = new ArrayList();
-        int i=0;
+        int i = 0;
         switch (x) {
 
             case 4:
                 Arreglo.clear();
                 query = "select * from Users";
-                i=0;
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(3));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(3));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -692,14 +688,14 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
             case 5:
                 Arreglo.clear();
                 query = "select * from Lote";
-                i=0;
+                i = 0;
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(2));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(2));
                     }
                     return Arreglo;
 
@@ -713,17 +709,17 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
             case 6:
                 Arreglo.clear();
                 query = "select * from Productos";
-                i=0;
+                i = 0;
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                            Arreglo.add(rs.getInt(1));
-                            Arreglo.add(rs.getInt(3));
-                            Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -736,9 +732,9 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         return null;
 
     }
-    
-    public ArrayList BusquedaPersonalizada(int x, String Letra,  int Num){
-        
+
+    public ArrayList BusquedaPersonalizada(int x, String Letra, int Num) {
+
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
@@ -750,24 +746,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         }
         String query = "";
         ArrayList Arreglo = new ArrayList();
-        int i=0;
+        int i = 0;
         switch (x) {
-        /////////////////////////////////USERS//////////////////////////////////
+            /////////////////////////////////USERS//////////////////////////////////
             case 19:
-                
+
                 Arreglo.clear();
-                query = "select * from Users where Nombre like '"+Letra+"%'";
-                i=0;
+                query = "select * from Users where Nombre like '" + Letra + "%'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(3));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(3));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -775,24 +771,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
+
             case 20:
-                
+
                 Arreglo.clear();
-                query = "select * from Users where Nombre ='"+Letra+"'";
-                i=0;
+                query = "select * from Users where Nombre ='" + Letra + "'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(3));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(3));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -800,24 +796,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
-                case 21:
-                
+
+            case 21:
+
                 Arreglo.clear();
-                query = "select * from Users where user_id ="+Num+"";
-                i=0;
+                query = "select * from Users where user_id =" + Num + "";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(3));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(3));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -825,23 +821,23 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-        //////////////////////////////LOTE//////////////////////////////////////
+            //////////////////////////////LOTE//////////////////////////////////////
             case 22:
                 Arreglo.clear();
-                query = "select * from Lote where Nombre like'"+Letra+"%'";
-                i=0;
+                query = "select * from Lote where Nombre like'" + Letra + "%'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(2));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(2));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -849,22 +845,22 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
             case 23:
                 Arreglo.clear();
-                query = "select * from Lote where Nombre ='"+Letra+"'";
-                i=0;
+                query = "select * from Lote where Nombre ='" + Letra + "'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(2));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(2));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -872,23 +868,23 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
+
             case 24:
                 Arreglo.clear();
-                query = "select * from Lote where IdLote ="+Num+"";
-                i=0;
+                query = "select * from Lote where IdLote =" + Num + "";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getString(2));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getString(2));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -896,25 +892,25 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-        
-        //////////////////////////////////ITEMS/////////////////////////////////
+
+            //////////////////////////////////ITEMS/////////////////////////////////
             case 25:
                 Arreglo.clear();
-                query = "select * from Productos where IdItem ="+Num+"";
-                i=0;
+                query = "select * from Productos where IdItem =" + Num + "";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getInt(3));
-                    Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -922,24 +918,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
+
             case 26:
                 Arreglo.clear();
-                query = "select * from Productos where NombreProd like '"+Letra+"%'";
-                i=0;
+                query = "select * from Productos where NombreProd like '" + Letra + "%'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getInt(3));
-                    Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -947,24 +943,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-        
-             case 27:
+
+            case 27:
                 Arreglo.clear();
-                query = "select * from Productos where NombreProd ='"+Letra+"'";
-                i=0;
+                query = "select * from Productos where NombreProd ='" + Letra + "'";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getInt(3));
-                    Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -972,24 +968,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
+
             case 28:
                 Arreglo.clear();
-                query = "select * from Productos where Precio >"+Num+"";
-                i=0;
+                query = "select * from Productos where Precio >" + Num + "";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getInt(3));
-                    Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -997,24 +993,24 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
-                
+
             case 29:
                 Arreglo.clear();
-                query = "select * from Productos where Precio <"+Num+"";
-                i=0;
+                query = "select * from Productos where Precio <" + Num + "";
+                i = 0;
 
                 try {
 
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
-                    while(rs.next()){
-                    Arreglo.add(rs.getInt(1));
-                    Arreglo.add(rs.getInt(3));
-                    Arreglo.add(rs.getString(4));
+                    while (rs.next()) {
+                        Arreglo.add(rs.getInt(1));
+                        Arreglo.add(rs.getInt(3));
+                        Arreglo.add(rs.getString(4));
                     }
-                    
+
                     return Arreglo;
 
                 } catch (SQLException e) {
@@ -1022,98 +1018,97 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
                     System.out.println("Failed to make insertion!");
                     e.printStackTrace();
                 }
-                
+
                 break;
         }
-        
-        
+
         return null;
-}
+    }
 
-    public void GenerarPDF(Connection connection, Integer[] id, String[] nombre, int opc, String nombreArchivo) {
+    public void GenerarPDF(Connection connection, ArrayList id, ArrayList nombre, int opc, String nombreArchivo) {
 
-        Integer []IdsPDF = new Integer[30];
-        String []NombresPDF = new String[30];
+        ArrayList<Integer> IdsPDF = new ArrayList<Integer>();
+        ArrayList<String> NombresPDF = new ArrayList<String>();
         IdsPDF = id;
         NombresPDF = nombre;
 
-        Document document = new Document() ;
+        Document document = new Document();
 
         try {
 
-            PdfWriter.getInstance(document, new FileOutputStream(nombreArchivo+".pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream(nombreArchivo + ".pdf"));
             document.open();
             System.out.println("Probo");
             PdfPTable table = new PdfPTable(2);
-            if(opc == 4){
-            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuario.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Usuario", fuenteUsuario));
-            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUser.setPaddingBottom(15);
-            table.addCell(cellUser);
-            
-            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Usuario", fuenteUsuarioNombre));
-            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUserNombre.setPaddingBottom(15);
-            table.addCell(cellUserNombre);
+            if (opc == 4) {
+                Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuario.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUser = new PdfPCell(new Paragraph("Id Usuario", fuenteUsuario));
+                cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUser.setPaddingBottom(15);
+                table.addCell(cellUser);
+
+                Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Usuario", fuenteUsuarioNombre));
+                cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUserNombre.setPaddingBottom(15);
+                table.addCell(cellUserNombre);
             }
-            if(opc == 5){
-            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuario.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUser = new PdfPCell(new Paragraph("Id Lote", fuenteUsuario));
-            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUser.setPaddingBottom(15);
-            table.addCell(cellUser);
-            
-            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Lote", fuenteUsuarioNombre));
-            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUserNombre.setPaddingBottom(15);
-            table.addCell(cellUserNombre);
+            if (opc == 5) {
+                Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuario.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUser = new PdfPCell(new Paragraph("Id Lote", fuenteUsuario));
+                cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUser.setPaddingBottom(15);
+                table.addCell(cellUser);
+
+                Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Lote", fuenteUsuarioNombre));
+                cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUserNombre.setPaddingBottom(15);
+                table.addCell(cellUserNombre);
             }
-            if(opc == 6){
-            Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuario.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUser = new PdfPCell(new Paragraph("Cantidad", fuenteUsuario));
-            cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUser.setPaddingBottom(15);
-            table.addCell(cellUser);
-            
-            Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
-            fuenteUsuarioNombre.setColor(BaseColor.WHITE);
-            
-            PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Producto", fuenteUsuarioNombre));
-            cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
-            cellUserNombre.setPaddingBottom(15);
-            table.addCell(cellUserNombre);
+            if (opc == 6) {
+                Font fuenteUsuario = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuario.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUser = new PdfPCell(new Paragraph("Cantidad", fuenteUsuario));
+                cellUser.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUser.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUser.setPaddingBottom(15);
+                table.addCell(cellUser);
+
+                Font fuenteUsuarioNombre = new Font(Font.FontFamily.TIMES_ROMAN, 20);
+                fuenteUsuarioNombre.setColor(BaseColor.WHITE);
+
+                PdfPCell cellUserNombre = new PdfPCell(new Paragraph("Nombre Producto", fuenteUsuarioNombre));
+                cellUserNombre.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellUserNombre.setBackgroundColor(BaseColor.DARK_GRAY);
+                cellUserNombre.setPaddingBottom(15);
+                table.addCell(cellUserNombre);
             }
-            for (int x = 0; x < IdsPDF.length; x++) {
-                String nombreCelda = IdsPDF[x].toString();
-                
+            for (int x = 0; x < IdsPDF.size(); x++) {
+                String nombreCelda = IdsPDF.get(x).toString();
+
                 PdfPCell cellUserNombreFor = new PdfPCell(new Paragraph(nombreCelda));
                 cellUserNombreFor.setHorizontalAlignment(Element.ALIGN_CENTER);
                 table.addCell(cellUserNombreFor);
-                
-                PdfPCell cellUserNombre2For = new PdfPCell(new Paragraph(NombresPDF[x]));
+
+                PdfPCell cellUserNombre2For = new PdfPCell(new Paragraph(NombresPDF.get(x)));
                 cellUserNombre2For.setHorizontalAlignment(Element.ALIGN_CENTER);
                 table.addCell(cellUserNombre2For);
             }
-          
+
             document.add(table);
 
             document.close();
@@ -1124,10 +1119,10 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         }
 
     }
-    
-    public ArrayList EspacioDisp(){
-        
-         Calendar calendar = Calendar.getInstance();
+
+    public ArrayList EspacioDisp() {
+
+        Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
         Connection connection = null;
@@ -1136,30 +1131,30 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        String query="select COUNT(IDLote) from Lote";
-        ArrayList Arreglo= new ArrayList();
-                    
-            try {
-               Statement st = connection.createStatement();
-               ResultSet rs = st.executeQuery(query);
-               
-               while(rs.next()){
-               Arreglo.add(rs.getInt(1));
-               Arreglo.add(100-rs.getInt(1));
-               }
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+
+        String query = "select COUNT(IDLote) from Lote";
+        ArrayList Arreglo = new ArrayList();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                Arreglo.add(rs.getInt(1));
+                Arreglo.add(100 - rs.getInt(1));
             }
 
-        
-            return Arreglo;
-    
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Arreglo;
+
     }
-    public ArrayList PrecioInv(){
-        
-         Calendar calendar = Calendar.getInstance();
+
+    public ArrayList PrecioInv() {
+
+        Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
         Connection connection = null;
@@ -1168,26 +1163,23 @@ public boolean LogIn(Connection connection, int user_id, String pass) {
         } catch (URISyntaxException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        String query="select SUM(Precio), SUM(Cantidad) from Productos";
-        ArrayList Arreglo= new ArrayList();
-                    
-            try {
-               Statement st = connection.createStatement();
-               ResultSet rs = st.executeQuery(query);
-               int x=0;
-               while(rs.next()){
-               x=x+(rs.getInt(1)*rs.getInt(2));
-               
-               }
-               Arreglo.add(x);
-            } catch (SQLException ex) {
-                Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
 
-        
-            return Arreglo;
+        String query = "select SUM(Precio), SUM(Cantidad) from Productos";
+        ArrayList Arreglo = new ArrayList();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            int x = 0;
+            while (rs.next()) {
+                x = x + (rs.getInt(1) * rs.getInt(2));
+
+            }
+            Arreglo.add(x);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Arreglo;
     }
 }
-
-    

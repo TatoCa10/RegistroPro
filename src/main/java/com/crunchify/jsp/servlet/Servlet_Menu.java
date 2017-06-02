@@ -724,7 +724,7 @@ public class Servlet_Menu extends HttpServlet {
             User user = new User();
             Lote lote = new Lote();
             Item item = new Item();
-            ArrayList Arreglo= new ArrayList();
+            ArrayList Arreglo = new ArrayList();
             int i = 0;
             int opcion = Integer.parseInt(request.getParameter("opcion"));
 
@@ -765,8 +765,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 2:
                     int IdLote = Integer.parseInt(request.getParameter("IdLoteReg"));
                     String NombreLote = request.getParameter("NombreLoteReg");
@@ -841,12 +840,11 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 4:
                     Arreglo.clear();
                     Arreglo = service.ListaGeneral(4);
-                    
+
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
                     out.println("<head>");
@@ -867,12 +865,12 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
-                    for (int x = 0; x < Arreglo.size(); x=x+2) {
+                    for (int x = 0; x < Arreglo.size(); x = x + 2) {
                         out.println("<tr>");
                         out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
-                        out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
+                        out.println("<td class=\"text-left\">" + Arreglo.get(x + 1) + "</td>");
                         out.println("</tr>");
-                       
+
                     }
                     out.println("</tbody>");
                     out.println("</table>");
@@ -881,13 +879,11 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</center>");
                     out.println("</body>");
                     out.println("</html>");
-                    break
-                    ;
+                    break;
                 case 5:
                     if (opcion == 5) {
                         Arreglo.clear();
                         Arreglo = service.ListaGeneral(5);
-                        
 
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
@@ -909,10 +905,10 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
-                        for (int x = 0; x < Arreglo.size(); x=x+2) {
+                        for (int x = 0; x < Arreglo.size(); x = x + 2) {
                             out.println("<tr>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
-                            out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
+                            out.println("<td class=\"text-left\">" + Arreglo.get(x + 1) + "</td>");
                             out.println("</tr>");
                         }
                         out.println("</tbody>");
@@ -923,17 +919,14 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 6:
                     if (opcion == 6) {
                         Arreglo.clear();
 
                         Arreglo = service.ListaGeneral(6);
-                        
-                        
-                        //NombresItems = service.ListarNombreItem(connection);
 
+                        //NombresItems = service.ListarNombreItem(connection);
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
@@ -955,11 +948,11 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</tr>");
                         out.println("</thead>");
                         out.println("<tbody class=\"table-hover\">");
-                        for (int x = 0; x < Arreglo.size(); x=x+3) {
+                        for (int x = 0; x < Arreglo.size(); x = x + 3) {
                             out.println("<tr>");
                             out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
-                            out.println("<td class=\"text-left\">" + Arreglo.get(x+1) + "</td>");
-                            out.println("<td class=\"text-left\">" + Arreglo.get(x+2) + "</td>");
+                            out.println("<td class=\"text-left\">" + Arreglo.get(x + 1) + "</td>");
+                            out.println("<td class=\"text-left\">" + Arreglo.get(x + 2) + "</td>");
                             out.println("</tr>");
                         }
                         out.println("</tbody>");
@@ -971,8 +964,7 @@ public class Servlet_Menu extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 9:
 
                     String NombreUsAct = request.getParameter("NombreUsuarioAct");
@@ -991,22 +983,21 @@ public class Servlet_Menu extends HttpServlet {
 
                     b = service.actUser(user);
 
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Actualizar Usuario</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        if (b == true) {
-                            out.println("<h1>Se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
-                        }else{
-                            out.println("<h1>No se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
-                        }
-                        out.println("</body>");
-                        out.println("</html>");
-                        break
-                    ;
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<title>Actualizar Usuario</title>");
+                    out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
+                    out.println("</head>");
+                    out.println("<body>");
+                    if (b == true) {
+                        out.println("<h1>Se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
+                    } else {
+                        out.println("<h1>No se actualizo correctamente el usuario con el Id: " + IdUsAct + " Espere...</h1>");
+                    }
+                    out.println("</body>");
+                    out.println("</html>");
+                    break;
                 case 10:
 
                     int IdLoteAct = Integer.parseInt(request.getParameter("IdLoteAct"));
@@ -1014,7 +1005,7 @@ public class Servlet_Menu extends HttpServlet {
                     lote.setIDLote(IdLoteAct);
                     lote.setNombreLote(NombreLoteAct);
                     b = service.actLote(lote);
-                    
+
                     response.sendRedirect("indexMainMenu.html");
 
 //                    if (b == true) {
@@ -1041,8 +1032,7 @@ public class Servlet_Menu extends HttpServlet {
 //                        out.println("</body>");
 //                        out.println("</html>");
 //                    }
-break
-                    ;
+                    break;
                 case 11:
 
                     int IdItem = Integer.parseInt(request.getParameter("IdProductoAct"));
@@ -1088,8 +1078,7 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 12:
 
                     int IdUserToDelete = Integer.parseInt(request.getParameter("IdUserDel"));
@@ -1119,8 +1108,7 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 13:
                     //Borrar Lote No es Permitido
                     ;
@@ -1154,8 +1142,7 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 15:
                     int IdItemIn = Integer.parseInt(request.getParameter("IdProdIn"));
                     int Canti = Integer.parseInt(request.getParameter("CantProdIn"));
@@ -1187,27 +1174,20 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
 
                 case 16:
                     if (opcion == 16) {
-                        Arreglo.clear();
-                        Integer[] idsUsersPDF = new Integer[30];
-                        String[] NombresUsersPDF = new String[30];
+                        ArrayList<Integer> idsUsersPDF = new ArrayList<Integer>();
+                        ArrayList<String> NombresUsersPDF = new ArrayList<String>();
                         String Archivo = request.getParameter("NombrePDFUser");
-                        Arreglo = service.ListaGeneral(4);
-                        i = 0;
-                        
-                            for (int x = 0; x < Arreglo.size(); x++) {
-                             idsUsersPDF[i] = (Integer) Arreglo.get(x);
-                             NombresUsersPDF[i] = (String) Arreglo.get(x+1);
-                            i++;   
-                            }
-                            
-                         
 
-                        service.GenerarPDF(connection, idsUsersPDF, NombresUsersPDF,4,Archivo);
+                        while (rs.next()) {
+                            idsUsersPDF.add(rs.getInt(1));
+                            NombresUsersPDF.add(rs.getString(3));
+                        }
+                        service.GenerarPDF(connection, idsUsersPDF, NombresUsersPDF, 4, Archivo);
+
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
@@ -1219,23 +1199,18 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 17:
                     if (opcion == 17) {
-                        Arreglo.clear();
-                        Integer[] idsUsersPDF2 = new Integer[30];
-                        String[] NombresUsersPDF2 = new String[30];
+                        ArrayList<Integer> idsUsersPDF2 = new ArrayList<Integer>();
+                        ArrayList<String> NombresUsersPDF2 = new ArrayList<String>();
                         String ArchivoL = request.getParameter("NombrePDFLote");
 
-                        Arreglo = service.ListaGeneral(5);
-                        i = 0;
-                        for (int x = 0; x < Arreglo.size(); x++) {
-                             idsUsersPDF2[i] = (Integer) Arreglo.get(x);
-                             NombresUsersPDF2[i] = (String) Arreglo.get(x+1);
-                            i++;   
-                            }
-                        service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,5, ArchivoL);
+                        while (rs.next()) {
+                            idsUsersPDF2.add(rs.getInt(1));
+                            NombresUsersPDF2.add(rs.getString(2));
+                        }
+                        service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2, 5, ArchivoL);
 
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
@@ -1248,24 +1223,18 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
                 case 18:
                     if (opcion == 18) {
-                        Arreglo.clear();
-                        Integer[] idsUsersPDF2 = new Integer[100];
-                        String[] NombresUsersPDF2 = new String[100];
+                        ArrayList<Integer> idsUsersPDF2 = new ArrayList<Integer>();
+                        ArrayList<String> NombresUsersPDF2 = new ArrayList<String>();
                         String ArchivoP = request.getParameter("NombrePDFProd");
 
-                        Arreglo = service.ListaGeneral(6);
-                        
-                        i = 0;
-                        for (int x = 0; x < Arreglo.size(); x++) {
-                             idsUsersPDF2[i] = (Integer) Arreglo.get(x);
-                             NombresUsersPDF2[i] = (String) Arreglo.get(x+1);
-                            i++;   
-                            }
-                        service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2,6,ArchivoP);
+                        while (rs.next()) {
+                            idsUsersPDF2.add(rs.getInt(3));
+                            NombresUsersPDF2.add(rs.getString(4));
+                        }
+                        service.GenerarPDF(connection, idsUsersPDF2, NombresUsersPDF2, 6, ArchivoP);
 
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
@@ -1278,9 +1247,7 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
-
+                    break;
 
                 case 100:
                     if (opcion == 100) {
@@ -1298,12 +1265,13 @@ break
                         out.println("</body>");
                         out.println("</html>");
                     }
-                    break
-                    ;
+                    break;
 
             }
 
         } catch (URISyntaxException ex) {
+            Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
 
