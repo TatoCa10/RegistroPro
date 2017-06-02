@@ -1176,7 +1176,7 @@ public class Servlet_Menu extends HttpServlet {
                     }
                     break;
 
-                case 16:
+                case 16: 
                     if (opcion == 16) {
                         ArrayList<Integer> idsUsersPDF = new ArrayList<Integer>();
                         ArrayList<String> NombresUsersPDF = new ArrayList<String>();
