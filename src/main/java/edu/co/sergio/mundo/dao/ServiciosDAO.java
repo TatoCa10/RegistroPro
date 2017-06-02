@@ -1165,8 +1165,7 @@ public class ServiciosDAO {
         return Arreglo;
     }
 
-    public ArrayList Consultas() {
-
+    public ArrayList ArrayUsers() {
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
@@ -1193,7 +1192,22 @@ public class ServiciosDAO {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        query = "select * from Lote";
+        return Users;
+    }
+
+    public ArrayList ArrayLotes() {
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "select * from Lote";
         ArrayList Lote = new ArrayList();
 
         try {
@@ -1209,7 +1223,22 @@ public class ServiciosDAO {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        query = "select * from Productos";
+        return Lote;
+    }
+
+    public ArrayList ArrayProd() {
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "select * from Productos";
         ArrayList Prod = new ArrayList();
 
         try {
@@ -1225,12 +1254,9 @@ public class ServiciosDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ArrayList Arreglo = new ArrayList();
-        Arreglo.add(Users);
-        Arreglo.add(Lote);
-        Arreglo.add(Prod);
 
-        return Arreglo;
+        return Prod;
+
     }
 
 }

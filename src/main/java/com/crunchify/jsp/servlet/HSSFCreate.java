@@ -32,14 +32,12 @@ public class HSSFCreate extends HttpServlet {
         response.setContentType("application/vnd.ms-excel");
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet = wb.createSheet("new sheet");
-        ArrayList a = new ArrayList();
-        a = dao.Consultas();
         ArrayList Users = new ArrayList();
-        Users = (ArrayList)a.get(0);
+        Users = dao.ArrayUsers();
         ArrayList Lotes = new ArrayList();
-        Lotes = (ArrayList)a.get(1);
+        Lotes = dao.ArrayLotes();
         ArrayList Prod = new ArrayList();
-        Prod = (ArrayList) a.get(2);
+        Prod = dao.ArrayProd();
        
         Map<String, Object[]> data = new HashMap<String, Object[]>();
 		data.put("1", new Object[] {"", "", "Usuarios", "", "", "","", "Lotes","","","","","Productos"});
