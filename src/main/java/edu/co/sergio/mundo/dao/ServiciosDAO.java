@@ -85,7 +85,12 @@ public class ServiciosDAO {
         return true;
     }
 
-    public boolean insertarUser(int userId, String pass, String nombre, String apellido, String correo, String telefono) {
+    /**
+     *
+     * @param String
+     * @return
+     */
+    public boolean insertarUser (String nombre, String apellido, String celular, String telefono) {
         Boolean b;
         Calendar calendar = Calendar.getInstance();
         java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
@@ -97,20 +102,20 @@ public class ServiciosDAO {
             Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String query = " insert into Users (user_id, pass, Nombre, Apellido, Correo, Telefono)"
-                + " values (?, ?, ?, ?, ?, ?)";
+        String query = " insert into Users (Nombre, Apellido, Celular, Telefono)"
+                + " values (?, ?, ?, ?)";
 
         PreparedStatement preparedStmt = null;
 
         try {
 
             preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1, userId);
-            preparedStmt.setString(2, pass);
-            preparedStmt.setString(3, nombre);
-            preparedStmt.setString(4, apellido);
-            preparedStmt.setString(5, correo);
-            preparedStmt.setString(6, telefono);
+           
+            preparedStmt.setString(1, nombre);
+            preparedStmt.setString(2, apellido);
+            preparedStmt.setString(3, telefono);
+            preparedStmt.setString(4, celular);
+            
 
             preparedStmt.executeUpdate();
 
