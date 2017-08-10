@@ -85,11 +85,7 @@ public class ServiciosDAO {
         return true;
     }
 
-    /**
-     *
-     * @param String
-     * @return
-     */
+    
     public boolean insertarUser (String nombre, String apellido, String celular, String telefono) {
         Boolean b;
         Calendar calendar = Calendar.getInstance();
