@@ -659,8 +659,8 @@ public class ServiciosDAO {
                     Statement st = connection.createStatement();
                     ResultSet rs = st.executeQuery(query);
                     while (rs.next()) {
-                        Arreglo.add(rs.getInt(1));
-                        Arreglo.add(rs.getString(3));
+                        Arreglo.add(rs.getString(1));
+                        Arreglo.add(rs.getString(2));
                     }
 
                     return Arreglo;
