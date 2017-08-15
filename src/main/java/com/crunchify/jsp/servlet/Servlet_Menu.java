@@ -85,28 +85,51 @@ public class Servlet_Menu extends HttpServlet {
 
             switch (opcion) {
                 case 1:
-                    int idCrear = Integer.parseInt(request.getParameter("IdUserReg"));
-                    String pass = request.getParameter("NPassUserReg");
+                   
                     String Nombre = request.getParameter("NombreUserReg");
                     String Apellido = request.getParameter("ApellidoUserReg");
-                    String Correo = request.getParameter("CorreoUserReg");
+                    String Celular = request.getParameter("CorreoUserReg");
                     String Telefono = request.getParameter("TelUserReg");
-                    b = service.insertarUser(idCrear, pass, Nombre, Apellido, Correo, Telefono);
+                    b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
 
                     if (b == true) {
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Servlet Servlet_Menu</title>");
-                        out.println("<meta http-equiv=" + "Refresh" + " content=" + "3;url=" + "indexMainMenu.html" + ">");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<h1>El Usuario Se Agrego Satisfactoriamente...</h1>");
-                        out.println("<h1>" + idCrear + "</h1>");
-                        out.println("<h1>" + Nombre + "</h1>");
-                        out.println("<p>Seras dirigido automaticamente en cinco segundos al menu principal. En caso contrario, puedes acceder registrar otro Lote, haciendo click <a href=" + "CrearUser.html" + ">Aqu√≠</a></p>");
-                        out.println("</body>");
-                        out.println("</html>");
+                        Arreglo.clear();
+                        Arreglo = service.ListaGeneral(4);
+
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<meta charset=\"utf-8\" />");
+                    out.println("<title>Servlet_Menu</title>");
+                    out.println("<link rel=\"stylesheet\" href=\"tablas.css\">");
+                    out.println("<meta name=\"viewport\" content=\"initial-scale=1.0; maximum-scale=1.0; width=device-width;\">");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<div class=\"table-title\">");
+                    out.println("<h3>Listado Usuarios</h3>");
+                    out.println("</div>");
+                    out.println("<table class=\"table-fill\">");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th class=\"text-left\">ID</th>");
+                    out.println("<th class=\"text-left\">Nombre</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody class=\"table-hover\">");
+                    for (int x = 0; x < Arreglo.size(); x = x + 2) {
+                        out.println("<tr>");
+                        out.println("<td class=\"text-left\">" + Arreglo.get(x) + "</td>");
+                        out.println("<td class=\"text-left\">" + Arreglo.get(x + 1) + "</td>");
+                        out.println("</tr>");
+
+                    }
+                    out.println("</tbody>");
+                    out.println("</table>");
+                    out.println("<center>");
+                    out.println("<p>Regresar al menu principal <a href=" + "indexMainMenu.html" + "> Click Aqui≠</a></p>");
+                    out.println("</center>");
+                    out.println("</body>");
+                    out.println("</html>");
                     } else {
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
