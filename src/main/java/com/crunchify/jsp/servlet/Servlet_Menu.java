@@ -111,8 +111,8 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("<table class=\"table-fill\">");
                     out.println("<thead>");
                     out.println("<tr>");
-                    out.println("<th class=\"text-left\">ID</th>");
                     out.println("<th class=\"text-left\">Nombre</th>");
+                    out.println("<th class=\"text-left\">Apellido</th>");
                     out.println("</tr>");
                     out.println("</thead>");
                     out.println("<tbody class=\"table-hover\">");
@@ -126,7 +126,7 @@ public class Servlet_Menu extends HttpServlet {
                     out.println("</tbody>");
                     out.println("</table>");
                     out.println("<center>");
-                    out.println("<p>Regresar al menu principal <a href=" + "indexMainMenu.html" + "> Click Aqui­</a></p>");
+                    out.println("<p>Regresar al menu principal <a href=" + "CrearUser.html" + "> Click Aqui­</a></p>");
                     out.println("</center>");
                     out.println("</body>");
                     out.println("</html>");
