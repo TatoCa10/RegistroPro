@@ -105,6 +105,7 @@ public class ServiciosDAO {
 
         try {
 
+            
             preparedStmt = connection.prepareStatement(query);
            
             preparedStmt.setString(1, nombre);
