@@ -93,6 +93,7 @@ public class Servlet_Menu extends HttpServlet {
                     b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
 
                     if (b == true) {
+                        
                         Arreglo.clear();
                         Arreglo = service.ListaGeneral(4);
 
