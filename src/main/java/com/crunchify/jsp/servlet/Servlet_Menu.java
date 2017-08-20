@@ -97,7 +97,7 @@ public class Servlet_Menu extends HttpServlet {
                     
                     String mensaje = new Gson().toJson(Arreglo);
                     
-                    out.println(mensaje);
+                    out.println(service.YEISON(4));
             
             switch (opcion) {
                 case 1:

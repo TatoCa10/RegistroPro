@@ -1,5 +1,6 @@
 package edu.co.sergio.mundo.dao;
 
+import com.google.gson.Gson;
 import edu.co.sergio.mundo.vo.Item;
 import edu.co.sergio.mundo.vo.Lote;
 import java.sql.Connection;
@@ -1258,6 +1259,52 @@ public class ServiciosDAO {
         }
 
         return Prod;
+
+    }
+    
+    public String YEISON(int x) {
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ServiciosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "";
+        ArrayList Arreglo = new ArrayList();
+        int i = 0;
+        switch (x) {
+
+            case 4:
+                Arreglo.clear();
+                query = "select * from Users";
+                i = 0;
+
+                try {
+
+                    Statement st = connection.createStatement();
+                    ResultSet rs = st.executeQuery(query);
+                    while (rs.next()) {
+                        Arreglo.add(rs.getString(1));
+                        Arreglo.add(rs.getString(2));
+                    }
+
+                    return new Gson().toJson(Arreglo);
+
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println("Failed to make insertion!");
+                    e.printStackTrace();
+                }
+                break;
+
+            
+        }
+        return null;
 
     }
 
