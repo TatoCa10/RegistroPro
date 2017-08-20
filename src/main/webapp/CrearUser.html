@@ -24,7 +24,7 @@
                         success : function(resp){
                             
                             $.each(resp,function(indice,user){                   
-                                $("#Usuario").append($("<ul>", {value:user.nombre, text:user.nombre}));
+                                $("#Usuario").append($("<option>", {value:user.nombre, text:user.nombre}));
                             });
                             
                         }
