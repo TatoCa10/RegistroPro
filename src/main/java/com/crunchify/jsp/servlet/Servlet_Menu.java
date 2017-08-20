@@ -24,6 +24,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+
 
 @WebServlet(name = "Servlet_Menu", urlPatterns = {"/Servlet_Menu"})
 public class Servlet_Menu extends HttpServlet {
@@ -83,13 +85,27 @@ public class Servlet_Menu extends HttpServlet {
             int i = 0;
             int opcion = Integer.parseInt(request.getParameter("opcion"));
 
-            switch (opcion) {
-                case 1:
-                   
+            
+            
+            
                     String Nombre = request.getParameter("NombreUserReg");
                     String Apellido = request.getParameter("ApellidoUserReg");
                     String Celular = request.getParameter("CorreoUserReg");
                     String Telefono = request.getParameter("TelUserReg");
+                    b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
+                    Arreglo=service.ListaGeneral(4);
+                    
+                    String mensaje = new Gson().toJson(Arreglo);
+                    
+                    out.println(mensaje);
+            
+            switch (opcion) {
+                case 1:
+                   
+//                    String Nombre = request.getParameter("NombreUserReg");
+//                    String Apellido = request.getParameter("ApellidoUserReg");
+//                    String Celular = request.getParameter("CorreoUserReg");
+//                    String Telefono = request.getParameter("TelUserReg");
                     b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
 
                     if (b == true) {

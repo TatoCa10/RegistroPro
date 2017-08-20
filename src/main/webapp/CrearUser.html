@@ -3,15 +3,52 @@
     <head>
         <title>Crear Usuario</title>
         <link rel='stylesheet' href='estilos.css'>
+        <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>text/javascript
+            
+            
+            $(document).ready(function(){
+                    obtenerDatos();        
+            });
+            
+            
+        
+                function obtenerDatos(){
+                    $.ajax({
+                        
+                        type : "post",
+                        url : "Servlet_Menu",
+                        asyc : true,
+                        cache : false,
+                        success : function(resp){
+                            
+                            $.each(resp,function(indice,user){                   
+                                $("#Usuario").append($("<ul>", {value:user.nombre, text:user.nombre}));
+                            });
+                            
+                        }
+                        
+                    });
+                    
+                }
+        </script>
     </head>
     <body background="Pictures/Fondos/fondo4.jpg">
-        <form class='contacto' name="FormularioTabla" action="Servlet_Menu?opcion=1" method="post">
-            <div><label>Nombre:</label><input type="text" name="NombreUserReg"></div>
-            <div><label>Apellido:</label><input type="text" name="ApellidoUserReg"></div>
-            <div><label>Correo Electronico:</label><input type="text" name="CorreoUserReg"></div>
-            <div><label>Telefono:</label><input type="text" name="TelUserReg"></div>
-            <div><input type="submit" name= "RegistrarUser" value="Registrar Usuario"></div>
+        <form class='contacto' name="FormularioTabla" id="user" method="post">
+            <div><label>Nombre:</label><input type="text" name="NombreUserReg" id="NombreUserReg"></div>
+            <div><label>Apellido:</label><input type="text" name="ApellidoUserReg" id="ApellidoUserReg"></div>
+            <div><label>Celular:</label><input type="text" name="CorreoUserReg" id="CorreoUserReg"></div>
+            <div><label>Telefono:</label><input type="text" name="TelUserReg" id="TelUserReg"></div>
+            <div><input type="submit" id="submit" name= "RegistrarUser" value="Registrar Usuario"></div>
         </form>
+        
+        <select name="Usuario" id="Usuario">
+            <option value="">
+                --Lista--
+            </option>
+
+        </select>
     <center>
         <br><br><br><br><br><br><br><br><br><br><br>
         <h3 style="color: #ffffff"><font face="sans-serif"> Regresa al menu principal haciendo <a target=_self href="indexMainMenu.html"> Click Aqui</a></font></h3> 
