@@ -1290,7 +1290,7 @@ public class ServiciosDAO {
                     ResultSet rs = st.executeQuery(query);
                     while (rs.next()) {
                         Arreglo.add(rs.getString(1));
-                        Arreglo.add(rs.getString(2));
+                        //Arreglo.add(rs.getString(2));
                     }
 
                     return new Gson().toJson(Arreglo);

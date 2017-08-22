@@ -18,13 +18,14 @@
                     $.ajax({
                         
                         type : "post",
+                        dataType: "json",
                         url : "/Servlet_Menu",
                         asyc : true,
                         cache : false,
                         success : function(resp){
-                            
+                            console.log("PERRRAAAAA MADURO")
                             $.each(resp,function(user){                   
-                                $("#Usuario").append($("<option>", {value:User.nombre, text:user.nombre}));
+                                $("#Usuario").append($("<option>", {value:user.nombre, text:user.nombre}));
                             });
                             
                         }

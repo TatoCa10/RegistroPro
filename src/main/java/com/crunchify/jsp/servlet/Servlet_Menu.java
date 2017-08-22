@@ -40,7 +40,7 @@ public class Servlet_Menu extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, URISyntaxException {
-        response.setContentType("application/json;charset=UTF-8");
+        response.setContentType("text/json;charset=UTF-8");
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,14 +52,29 @@ public class Servlet_Menu extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            
+            connection = conexion.getConnection();
+
+           // ArrayList Arreglo = new ArrayList();
+
+                    String Nombre = request.getParameter("NombreUserReg");
+                    String Apellido = request.getParameter("ApellidoUserReg");
+                    String Celular = request.getParameter("CorreoUserReg");
+                    String Telefono = request.getParameter("TelUserReg");
+                    b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
+                    //Arreglo=service.ListaGeneral(4);
+                    
+                    //String mensaje = new Gson().toJson(Arreglo);
+                    
+                    out.println(service.YEISON(4));
+            
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (URISyntaxException ex) {
+            Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(Servlet_Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -72,7 +87,6 @@ public class Servlet_Menu extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
@@ -84,28 +98,28 @@ public class Servlet_Menu extends HttpServlet {
             ArrayList Arreglo = new ArrayList();
             int i = 0;
             int opcion = Integer.parseInt(request.getParameter("opcion"));
-
-            
-            
-            
-                    String Nombre = request.getParameter("NombreUserReg");
-                    String Apellido = request.getParameter("ApellidoUserReg");
-                    String Celular = request.getParameter("CorreoUserReg");
-                    String Telefono = request.getParameter("TelUserReg");
-                    b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
-                    Arreglo=service.ListaGeneral(4);
-                    
-                    String mensaje = new Gson().toJson(Arreglo);
-                    
-                    out.println(service.YEISON(4));
-            
-            switch (opcion) {
-                case 1:
-                   
+//
+//            
+//            
+//            
 //                    String Nombre = request.getParameter("NombreUserReg");
 //                    String Apellido = request.getParameter("ApellidoUserReg");
 //                    String Celular = request.getParameter("CorreoUserReg");
 //                    String Telefono = request.getParameter("TelUserReg");
+//                    b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
+//                    Arreglo=service.ListaGeneral(4);
+//                    
+//                    String mensaje = new Gson().toJson(Arreglo);
+//                    
+//                    out.println(service.YEISON(4));
+            
+            switch (opcion) {
+                case 1:
+                   
+                    String Nombre = request.getParameter("NombreUserReg");
+                    String Apellido = request.getParameter("ApellidoUserReg");
+                    String Celular = request.getParameter("CorreoUserReg");
+                    String Telefono = request.getParameter("TelUserReg");
                     b = service.insertarUser(Nombre, Apellido, Celular, Telefono);
 
                     if (b == true) {
